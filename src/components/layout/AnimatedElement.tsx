@@ -6,7 +6,7 @@ import styles from './AnimatedElement.module.css';
 
 type AnimationType = 'fade-up' | 'fade-down' | 'fade-left' | 'fade-right' | 'zoom-in' | 'zoom-out';
 
-interface AnimatedElementProps<T extends ElementType = 'div'> {
+type AnimatedElementProps = {
   children: React.ReactNode;
   animation: AnimationType;
   delay?: number;
@@ -14,13 +14,13 @@ interface AnimatedElementProps<T extends ElementType = 'div'> {
   triggerOnce?: boolean;
   threshold?: number;
   className?: string;
-  tag?: T;
-}
+  as?: ElementType;
+};
 
 /**
  * AnimatedElement - A component that animates its children when they enter the viewport
  */
-export default function AnimatedElement<T extends ElementType = 'div'>({
+export default function AnimatedElement({
   children,
   animation,
   delay = 0,
@@ -28,16 +28,16 @@ export default function AnimatedElement<T extends ElementType = 'div'>({
   triggerOnce = true,
   threshold = 0.1,
   className = '',
-  tag: Tag = 'div' as T,
-}: AnimatedElementProps<T>) {
+  as: Component = 'div',
+}: AnimatedElementProps) {
   const { elementRef, isInView } = useAnimateOnScroll({
     threshold,
     triggerOnce,
   });
 
   return (
-    <Tag
-      ref={elementRef }
+    <Component
+      ref={elementRef}
       className={`${styles.animated} ${styles[animation]} ${isInView ? styles.visible : ''} ${className}`}
       style={{
         '--delay': `${delay}s`,
@@ -45,6 +45,6 @@ export default function AnimatedElement<T extends ElementType = 'div'>({
       } as React.CSSProperties}
     >
       {children}
-    </Tag>
+    </Component>
   );
 } 
