@@ -45,7 +45,6 @@ const testimonials = [
 export default function Testimonials() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [autoplay, setAutoplay] = useState(true);
-  const [expandedCards, setExpandedCards] = useState<number[]>([]);
 
   // Auto-rotate testimonials
   useEffect(() => {
@@ -66,26 +65,6 @@ export default function Testimonials() {
     // Resume autoplay after 10 seconds of inactivity
     setTimeout(() => setAutoplay(true), 10000);
   };
-
-  // Toggle expand/collapse of testimonial
-  const toggleExpand = (id: number) => {
-    setExpandedCards(prev => {
-      if (prev.includes(id)) {
-        return prev.filter(cardId => cardId !== id);
-      } else {
-        return [...prev, id];
-      }
-    });
-    
-    // Pause autoplay when expanding content
-    setAutoplay(false);
-    
-    // Resume autoplay after 20 seconds
-    setTimeout(() => setAutoplay(true), 20000);
-  };
-
-  // Check if a card is expanded
-  const isExpanded = (id: number) => expandedCards.includes(id);
 
   return (
     <section id="testimonials" className={styles.testimonials}>
@@ -110,16 +89,8 @@ export default function Testimonials() {
                       <path d="M15 7h6v6h-6z"></path>
                     </svg>
                   </div>
-                  <div className={`${styles.recommendation} ${isExpanded(testimonial.id) ? styles.expanded : ''}`}>
+                  <div className={styles.recommendation}>
                     <p>{testimonial.recommendation}</p>
-                    {testimonial.recommendation.length > 200 && (
-                      <button 
-                        className={styles.readMoreBtn} 
-                        onClick={() => toggleExpand(testimonial.id)}
-                      >
-                        {isExpanded(testimonial.id) ? 'Read Less' : 'Read More'}
-                      </button>
-                    )}
                   </div>
                   <div className={styles.testimonialFooter}>
                     <div className={styles.testimonialProfile}>

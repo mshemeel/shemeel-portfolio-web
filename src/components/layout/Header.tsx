@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import styles from './Header.module.css';
+import ThemeToggle from '@/components/ThemeToggle';
 
 /**
  * Header component with responsive navigation
@@ -39,16 +40,20 @@ export default function Header() {
           <span className={styles.name}>Muhammed Shemeel</span>
         </Link>
 
-        <button 
-          className={`${styles.menuButton} ${isMenuOpen ? styles.open : ''}`} 
-          onClick={toggleMenu}
-          aria-label="Toggle menu"
-          aria-expanded={isMenuOpen}
-        >
-          <span className={styles.menuBar}></span>
-          <span className={styles.menuBar}></span>
-          <span className={styles.menuBar}></span>
-        </button>
+        <div className={styles.rightContainer}>
+          <ThemeToggle />
+          
+          <button 
+            className={`${styles.menuButton} ${isMenuOpen ? styles.open : ''}`} 
+            onClick={toggleMenu}
+            aria-label="Toggle menu"
+            aria-expanded={isMenuOpen}
+          >
+            <span className={styles.menuBar}></span>
+            <span className={styles.menuBar}></span>
+            <span className={styles.menuBar}></span>
+          </button>
+        </div>
 
         <nav className={`${styles.nav} ${isMenuOpen ? styles.open : ''}`}>
           <ul className={styles.navList}>
@@ -86,6 +91,9 @@ export default function Header() {
               <Link href="#contact" className={styles.navLink} onClick={closeMenu}>
                 Contact
               </Link>
+            </li>
+            <li className={styles.navItem + ' ' + styles.mobileThemeToggle}>
+              <ThemeToggle />
             </li>
           </ul>
         </nav>

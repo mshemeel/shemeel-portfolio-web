@@ -20,6 +20,7 @@
 .testimonialCard {
   min-width: 100%;
   padding: 0 var(--space-4);
+  display: flex;
 }
 
 .testimonialContent {
@@ -28,6 +29,10 @@
   padding: var(--space-8);
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
   position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 400px; /* Fixed height for all cards */
+  width: 100%;
 }
 
 .quoteIcon {
@@ -47,13 +52,24 @@
   position: relative;
   z-index: 1;
   white-space: pre-line;
-  max-height: 180px;
-  overflow: hidden;
-  transition: max-height 0.3s ease-in-out;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary) transparent;
+  padding-right: var(--space-4);
+  flex-grow: 1; /* Allow recommendation to take available space */
 }
 
-.recommendation.expanded {
-  max-height: 1000px;
+.recommendation::-webkit-scrollbar {
+  width: 6px;
+}
+
+.recommendation::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.recommendation::-webkit-scrollbar-thumb {
+  background-color: var(--primary);
+  border-radius: 20px;
 }
 
 .recommendation p {
@@ -61,32 +77,11 @@
 }
 
 .readMoreBtn {
-  background: none;
-  border: none;
-  color: var(--primary);
-  font-weight: 500;
-  cursor: pointer;
-  padding: 0;
-  margin-top: var(--space-2);
-  display: block;
-  position: relative;
-  z-index: 2;
+  display: none;
 }
 
-.readMoreBtn:hover {
-  text-decoration: underline;
-}
-
-/* Add a gradient overlay at the bottom of non-expanded cards */
-.recommendation:not(.expanded)::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 60px;
-  background: linear-gradient(to bottom, transparent, var(--background-alt));
-  pointer-events: none;
+.recommendation::after {
+  display: none;
 }
 
 .testimonialFooter {
@@ -201,6 +196,10 @@
 }
 
 @media screen and (max-width: 768px) {
+  .testimonialContent {
+    height: 350px; /* Slightly shorter on tablets */
+  }
+  
   .recommendation {
     font-size: 1rem;
     padding-top: var(--space-6);
@@ -218,6 +217,10 @@
 }
 
 @media screen and (max-width: 480px) {
+  .testimonialContent {
+    height: 300px; /* Shorter on mobile */
+  }
+
   .profileImage, .profileInitial {
     width: 40px;
     height: 40px;
@@ -228,8 +231,7 @@
   }
   
   .recommendation {
-    max-height: 300px;
     overflow-y: auto;
-    padding-right: var(--space-2);
+    padding-right: var(--space-4);
   }
 } 

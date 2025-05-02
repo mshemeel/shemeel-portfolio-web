@@ -17,8 +17,14 @@
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
+/* Update dark mode for the scrolled header */
+[data-theme="dark"] .scrolled {
+  background-color: rgba(15, 23, 42, 0.9);
+}
+
+/* Fallback for system preference */
 @media (prefers-color-scheme: dark) {
-  .scrolled {
+  :root:not([data-theme]) .scrolled {
     background-color: rgba(15, 23, 42, 0.9);
   }
 }
@@ -44,6 +50,14 @@
   font-weight: 700;
   letter-spacing: -0.025em;
   color: var(--foreground);
+}
+
+/* Add right container styles */
+.rightContainer {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  z-index: 1001;
 }
 
 .menuButton {
@@ -126,6 +140,11 @@
   width: 100%;
 }
 
+/* Hide mobile theme toggle by default */
+.mobileThemeToggle {
+  display: none;
+}
+
 @media (max-width: 768px) {
   .menuButton {
     display: flex;
@@ -166,5 +185,11 @@
   .navLink {
     font-size: 1.5rem;
     padding: var(--space-2) var(--space-4);
+  }
+  
+  /* Show mobile theme toggle in mobile menu */
+  .mobileThemeToggle {
+    display: flex;
+    margin-top: var(--space-4);
   }
 } 

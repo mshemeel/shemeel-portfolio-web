@@ -16,11 +16,11 @@ const experienceData = [
     type: 'Full-time',
     description: 'Full Stack Lead Developer - n-Genius One SoftPOS App (Apple Tap to Pay Integration)',
     technologies: [
+      'Java', 'Spring Boot (Microservices Architecture)', 'Spring-Cloud', 'Spring WebFlux',
       'React Native (iOS & Android)', 'Swift (iOS SDK)', 'Kotlin/Java (Android SDK)',
-      'Java', 'Spring Boot (Microservices Architecture)',
       'OAuth 2.0', 'mTLS', 'PCI DSS Compliance',
-      'Apple Tap to Pay', 'MPGS',
-      'Docker', 'Kubernetes', 'Azure Cloud', 'CI/CD Pipelines'
+      'Apple Tap to Pay', 'MPGS','Keycloak', 'Spring Security',
+      'Docker', 'Kubernetes', 'Azure Cloud', 'CI/CD Pipelines', 'Terraform','Jenkins'
     ],
     achievements: [
       'Successfully launched Apple Tap to Pay in the UAE, one of the first SoftPOS solutions in the region.',
