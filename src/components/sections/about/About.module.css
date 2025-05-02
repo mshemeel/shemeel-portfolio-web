@@ -42,7 +42,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('/images/shemeel-profile.jpg');
+  background-image: url('/images/shemeel-avatar.jpg');
   background-size: cover;
   background-position: center;
   border-radius: var(--radius-md);
