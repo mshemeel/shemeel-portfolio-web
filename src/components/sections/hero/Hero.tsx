@@ -4,13 +4,14 @@ import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import styles from './Hero.module.css';
 import AnimatedElement from '@/components/layout/AnimatedElement';
+import heroData from '@/data/hero.json';
 
 /**
  * Hero section with animated introduction and professional photo
  */
 export default function Hero() {
   const [typedText, setTypedText] = useState('');
-  const fullText = 'Full Stack Developer | Java | Go Lang | React JS | Fintech';
+  const fullText = heroData.typingText;
   const [showCursor, setShowCursor] = useState(true);
 
   // Typing animation effect
@@ -35,7 +36,7 @@ export default function Hero() {
         <div className={styles.content}>
           <div className={styles.textContent}>
             <AnimatedElement animation="fade-up" delay={0.2}>
-              <h1 className={styles.name}>Muhammed Shemeel</h1>
+              <h1 className={styles.name}>{heroData.name}</h1>
             </AnimatedElement>
             
             <AnimatedElement animation="fade-up" delay={0.4}>
@@ -49,19 +50,21 @@ export default function Hero() {
             
             <AnimatedElement animation="fade-up" delay={0.6}>
               <p className={styles.description}>
-                Experienced Java Full Stack Developer with a proven track record of delivering high-quality 
-                software solutions. With 7 years of hands-on experience in various technologies.
+                {heroData.description}
               </p>
             </AnimatedElement>
             
             <AnimatedElement animation="fade-up" delay={0.8}>
               <div className={styles.actions}>
-                <a href="#contact" className={styles.primaryButton}>
-                  Contact Me
-                </a>
-                <a href="#projects" className={styles.secondaryButton}>
-                  View Projects
-                </a>
+                {heroData.buttons.map((button, index) => (
+                  <a 
+                    key={index} 
+                    href={button.link} 
+                    className={button.isPrimary ? styles.primaryButton : styles.secondaryButton}
+                  >
+                    {button.text}
+                  </a>
+                ))}
               </div>
             </AnimatedElement>
           </div>
@@ -69,8 +72,8 @@ export default function Hero() {
           <AnimatedElement animation="fade-left" delay={0.5} className={styles.imageWrapper}>
             <div className={styles.imageContainer}>
               <Image 
-                src="/images/shemeel-profile.jpg"
-                alt="Muhammed Shemeel" 
+                src={heroData.profileImage}
+                alt={heroData.name} 
                 width={400}
                 height={400}
                 priority

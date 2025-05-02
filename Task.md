@@ -91,7 +91,9 @@
   - [x] Move projects data to projects.json
   - [x] Move about data to about.json
   - [x] Move contact data to contact.json
+  - [x] Move hero data to hero.json
   - [x] Update components to import from JSON files
+  - [x] Update README with detailed instructions on content configuration
 
 ## Deployment
 - [ ] Deploy to Vercel
@@ -102,6 +104,7 @@
 ## Bugs & Issues Fixed
 - [x] Fixed ESLint errors in Contact.tsx (unescaped entities)
 - [x] Fixed type issues in AnimatedElement.tsx
+- [x] Fixed typing error in AnimatedElement.tsx related to dynamic component refs
 - [x] Fixed "Read More" button display issue for testimonials
 - [x] Fixed project structure issues
 
