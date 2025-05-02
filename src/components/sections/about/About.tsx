@@ -4,11 +4,14 @@ import React from 'react';
 import styles from './About.module.css';
 import AnimatedElement from '@/components/layout/AnimatedElement';
 import SectionTitle from '@/components/layout/SectionTitle';
+import aboutData from '@/data/about.json';
 
 /**
  * About section component
  */
 export default function About() {
+  const { bio, stats, resumeLink } = aboutData;
+
   return (
     <section id="about" className={styles.about}>
       <div className="container">
@@ -25,50 +28,32 @@ export default function About() {
               <div className={styles.patternBackground}></div>
               <div className={styles.profileImageContainer}></div>
               <div className={styles.experienceBadge}>
-                <span className={styles.years}>7+</span>
-                <span className={styles.text}>Years of<br />Experience</span>
+                <span className={styles.years}>{stats[0].number}</span>
+                <span className={styles.text} dangerouslySetInnerHTML={{ __html: stats[0].label }}></span>
               </div>
             </div>
           </AnimatedElement>
           
           <AnimatedElement animation="fade-left" delay={0.3} className={styles.textColumn}>
             <div className={styles.aboutText}>
-              <p className={styles.bio}>
-                Experienced Full Stack Developer with 7+ years of expertise in Java, Spring Boot, and React. 
-                Proficient in building scalable microservices and cloud-native applications with a focus on 
-                performance and maintainability. Currently working on fintech solutions at Network International, 
-                where I&apos;ve successfully implemented Apple Tap to Pay in the UAE region.
-              </p>
-              <p className={styles.bio}>
-                I specialize in designing and implementing complex enterprise applications, with strong 
-                experience across the entire development lifecycle. My technical skills include Java, Spring Boot, 
-                React, Go Lang, and cloud technologies. I&apos;m passionate about creating clean, efficient code and 
-                delivering exceptional user experiences.
-              </p>
-              <p className={styles.bio}>
-                Let&apos;s connect to discuss how my skills and experience can contribute to your team&apos;s success.
-              </p>
+              {bio.map((paragraph, index) => (
+                <p key={index} className={styles.bio}>
+                  {paragraph}
+                </p>
+              ))}
             </div>
             
             <div className={styles.stats}>
-              <div className={styles.statItem}>
-                <h3 className={styles.statNumber}>7+</h3>
-                <p className={styles.statLabel}>Years of<br />Experience</p>
-              </div>
-             {/*
-              <div className={styles.statItem}>
-                <h3 className={styles.statNumber}>20+</h3>
-                <p className={styles.statLabel}>Completed<br />Projects</p>
-              </div>*/}
-              
-              <div className={styles.statItem}>
-                <h3 className={styles.statNumber}>4+</h3>
-                <p className={styles.statLabel}>Companies<br />Worked</p>
-              </div>
+              {stats.map((stat, index) => (
+                <div key={index} className={styles.statItem}>
+                  <h3 className={styles.statNumber}>{stat.number}</h3>
+                  <p className={styles.statLabel} dangerouslySetInnerHTML={{ __html: stat.label }}></p>
+                </div>
+              ))}
             </div>
             
             <AnimatedElement animation="fade-up" delay={0.5}>
-              <a href="/resume/MuhammedShemeel_Jul2024.pdf" download className={styles.downloadButton}>
+              <a href={resumeLink} download className={styles.downloadButton}>
                 Download CV
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>

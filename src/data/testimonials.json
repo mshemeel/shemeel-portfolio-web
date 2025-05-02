@@ -1,0 +1,34 @@
+{
+  "testimonials": [
+    {
+      "id": 1,
+      "name": "Jijo George",
+      "position": "Project Lead at Cognizant",
+      "date": "July 31, 2023",
+      "relationship": "Jijo was senior to Muhammed but didn't manage Muhammed directly",
+      "recommendation": "I have had the pleasure of working alongside Muhammed Shemeel for 1.5 years as the Technical Lead while he served as one of our backend developers. During this time, I consistently observed his impressive ability to develop and effectively implement microservices using the Spring framework. Muhammed has a thorough understanding of microservices concepts and can apply them in practical ways to deliver high-quality solutions.",
+      "profileImage": "/testimonials/jijo-george.jpg",
+      "linkedInUrl": "https://www.linkedin.com/in/jijopg4u/"
+    },
+    {
+      "id": 2,
+      "name": "Jiby George",
+      "position": "Principal - Architecture at LTIMindtree",
+      "date": "July 29, 2023",
+      "relationship": "Jiby managed Muhammed directly",
+      "recommendation": "I had the pleasure of working with Shemeel at LTIMindtree, I am delighted to provide a glowing recommendation for him as a Java full-stack developer. Throughout his time working under my guidance, he has consistently demonstrated exceptional skills and dedication, making him an invaluable member of our team.\n\nShemeel is an outstanding Java developer with a deep understanding of the language and its frameworks. He consistently delivers high-quality code, showing a keen eye for detail and a commitment to following best practices. His technical expertise has played a vital role in the successful completion of our projects.\n\nBeyond his technical prowess, Shemeel is an exemplary team player. He actively collaborates with his peers, willingly sharing his knowledge and offering support whenever needed. His positive attitude and approachable nature create a harmonious work environment that boosts overall team morale.\n\nAs his supervisor, I have witnessed Shemeel's strong problem-solving abilities firsthand. When faced with challenges, he remains composed and quickly analyzes the situation to find effective solutions. His ability to think critically and adapt to changing circumstances has been a tremendous asset to our team's success.\n\nIn summary, Shemeel has not only proven himself as an exceptional Java developer but also as a reliable and responsible team member. I have full confidence in his abilities and believe he will continue to excel in his future endeavors. I highly recommend him for any challenging software development roles.",
+      "profileImage": "/testimonials/jiby-george.jpg",
+      "linkedInUrl": "https://www.linkedin.com/in/jiby-george-02b111206/"
+    },
+    {
+      "id": 3,
+      "name": "Sony Mathew",
+      "position": "Solution Architect at Allianz",
+      "date": "July 29, 2023",
+      "relationship": "Sony managed Muhammed directly",
+      "recommendation": "Muhammed joined the team at a moment we were in dire need for a good technical resource and he fit the role to the T. He showed excellent learning capabilities as he quickly mastered the ropes and soon became an indispensable Java SME. He had a good rapport with everyone and was a joy to work with.",
+      "profileImage": "/testimonials/sony-mathew.jpg",
+      "linkedInUrl": "https://www.linkedin.com/in/sony-mathew-340a7155/"
+    }
+  ]
+} 

@@ -1,0 +1,18 @@
+{
+  "bio": [
+    "Experienced Full Stack Developer with 7+ years of expertise in Java, Spring Boot, and React. Proficient in building scalable microservices and cloud-native applications with a focus on performance and maintainability. Currently working on fintech solutions at Network International, where I've successfully implemented Apple Tap to Pay in the UAE region.",
+    "I specialize in designing and implementing complex enterprise applications, with strong experience across the entire development lifecycle. My technical skills include Java, Spring Boot, React, Go Lang, and cloud technologies. I'm passionate about creating clean, efficient code and delivering exceptional user experiences.",
+    "Let's connect to discuss how my skills and experience can contribute to your team's success."
+  ],
+  "stats": [
+    {
+      "number": "7+",
+      "label": "Years of<br />Experience"
+    },
+    {
+      "number": "4+",
+      "label": "Companies<br />Worked"
+    }
+  ],
+  "resumeLink": "/resume/MuhammedShemeel_Jul2024.pdf"
+} 

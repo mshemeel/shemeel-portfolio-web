@@ -1,0 +1,27 @@
+{
+  "educationData": [
+    {
+      "id": 1,
+      "institution": "University of Calicut",
+      "degree": "Bachelor of Technology (B.Tech)",
+      "field": "Electronics and Communication Engineering",
+      "period": "Jun 2012 - Jun 2016",
+      "location": "Kerala, India",
+      "logo": "🏛️"
+    }
+  ],
+  "certificationsData": [
+    {
+      "id": 1,
+      "name": "Team Champ Award",
+      "issuer": "IBS Software",
+      "date": "Awarded for exceptional team contribution"
+    },
+    {
+      "id": 2,
+      "name": "Spot On Award",
+      "issuer": "Mindtree",
+      "date": "Recognition for outstanding performance"
+    }
+  ]
+} 

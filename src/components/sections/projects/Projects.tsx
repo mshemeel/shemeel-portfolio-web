@@ -5,63 +5,10 @@ import Image from 'next/image';
 import styles from './Projects.module.css';
 import AnimatedElement from '@/components/layout/AnimatedElement';
 import SectionTitle from '@/components/layout/SectionTitle';
+import projectsJson from '@/data/projects.json';
 
-// Sample projects data
-const projectsData = [
-  {
-    id: 1,
-    title: 'n-Genius One SoftPOS',
-    description: 'Mobile payment solution with Apple Tap to Pay integration. One of the first SoftPOS solutions in the UAE region.',
-    image: '/projects/n-genius-one-attp.png',
-    copyright: 'Image © Network International',
-    technologies: ['Java', 'Spring Boot', 'Microservices','React Native', 'Swift', 'Kotlin'],
-    category: 'mobile',
-    link: 'https://www.network.ae/en/press-and-media/network-international-launches-tap-to-pay-on-iphone-for-uae-merchants',
-    featured: true
-  },
-  {
-    id: 2,
-    title: 'Allegiant Air navitaire integration',
-    description: 'Microservices architecture for integrating legacy booking system with Navitaire APIs for Allegiant air.',
-    image: '/projects/allegiant_air.jpg',
-    copyright: 'Image © Allegiant Air',
-    technologies: ['Java', 'Spring Boot', 'Spring Cloud', 'Spring WebFlux', 'OpenShift'],
-    category: 'backend',
-    link: 'https://www.navitaire.com/news-allegiant-teams-with-navitaire.aspx',
-    featured: true
-  },
-  {
-    id: 3,
-    title: 'iCargo JTO for Japan Airlines',
-    description: 'System that manages the processes of self-handled facilities for carriers, GHAs and airports providing cargo handling services.',
-    image: '/projects/jal_cargo.png',
-    copyright: 'Image © Japan Airlines',
-    technologies: ['Java', 'Spring Boot', 'React', 'Redux', 'Oracle', 'PostgreSQL'],
-    category: 'fullstack',
-    link: 'https://www.ibsplc.com/news/japan-airlines-goes-live-with-ibs-software-to-manage-its-international-cargo-operation',
-    featured: true
-  }/*,
-  {
-    id: 4,
-    title: 'Portfolio Website',
-    description: 'Personal portfolio website built with Next.js and CSS modules featuring custom animations.',
-    image: '/projects/portfolio.jpg',
-    copyright: 'Image © Muhammed Shemeel',
-    technologies: ['Next.js', 'React', 'TypeScript', 'CSS Modules', 'Intersection Observer API'],
-    category: 'frontend',
-    link: '#',
-    featured: false
-  }*/
-];
-
-// Project categories for filtering
-const categories = [
-  { id: 'all', name: 'All Projects' },
-  //{ id: 'frontend', name: 'Frontend' },
- // { id: 'backend', name: 'Backend' },
- // { id: 'fullstack', name: 'Full Stack' },
- // { id: 'mobile', name: 'Mobile' }
-];
+// Import projects data from JSON file
+const { projectsData, categories } = projectsJson;
 
 /**
  * Projects section component

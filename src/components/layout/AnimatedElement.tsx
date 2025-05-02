@@ -37,8 +37,7 @@ export default function AnimatedElement<T extends ElementType = 'div'>({
 
   return (
     <Tag
-      // @ts-expect-error Expected type error due to generic element type
-      ref={elementRef}
+      ref={elementRef }
       className={`${styles.animated} ${styles[animation]} ${isInView ? styles.visible : ''} ${className}`}
       style={{
         '--delay': `${delay}s`,

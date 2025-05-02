@@ -1,0 +1,17 @@
+{
+  "email": "mshemeel007@gmail.com",
+  "location": "Dubai, United Arab Emirates",
+  "description": "Feel free to reach out if you have any questions, want to discuss potential collaboration, or just want to say hello. I'm always open to new opportunities and connections.",
+  "socialLinks": [
+    {
+      "name": "LinkedIn",
+      "url": "https://www.linkedin.com/in/mshemeel007/",
+      "icon": "linkedin"
+    },
+    {
+      "name": "GitHub",
+      "url": "https://github.com/mshemeel",
+      "icon": "github"
+    }
+  ]
+} 

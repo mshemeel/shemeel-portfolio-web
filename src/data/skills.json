@@ -1,0 +1,210 @@
+{
+  "skillCategories": [
+    { "id": "all", "name": "All Skills" },
+    { "id": "backend", "name": "Backend" },
+    { "id": "frontend", "name": "Frontend" },
+    { "id": "cloud", "name": "Cloud & DevOps" },
+    { "id": "database", "name": "Database" },
+    { "id": "tools", "name": "Tools & Methodologies" }
+  ],
+  "skillsData": [
+    { 
+      "name": "Java", 
+      "level": 95, 
+      "category": "backend", 
+      "logoPath": "/images/skills/java.svg"
+    },
+    { 
+      "name": "Spring Boot", 
+      "level": 90, 
+      "category": "backend", 
+      "logoPath": "/images/skills/spring-boot.svg"
+    },
+    { 
+      "name": "Spring Cloud", 
+      "level": 85, 
+      "category": "backend", 
+      "logoPath": "/images/skills/spring-cloud.svg"
+    },
+    { 
+      "name": "Microservices", 
+      "level": 90, 
+      "category": "backend", 
+      "logoPath": "/images/skills/microservices.svg"
+    },
+    { 
+      "name": "Spring WebFlux", 
+      "level": 80, 
+      "category": "backend", 
+      "logoPath": "/images/skills/spring-webflux.svg"
+    },
+    { 
+      "name": "REST APIs", 
+      "level": 90, 
+      "category": "backend", 
+      "logoPath": "/images/skills/rest-api.svg"
+    },
+    { 
+      "name": "GraphQL", 
+      "level": 75, 
+      "category": "backend", 
+      "logoPath": "/images/skills/graphql.svg"
+    },
+    { 
+      "name": "Go Lang", 
+      "level": 70, 
+      "category": "backend", 
+      "logoPath": "/images/skills/golang.svg"
+    },
+    { 
+      "name": "React.js", 
+      "level": 85, 
+      "category": "frontend", 
+      "logoPath": "/images/skills/react.svg"
+    },
+    { 
+      "name": "React Native", 
+      "level": 80, 
+      "category": "frontend", 
+      "logoPath": "/images/skills/react-native.svg"
+    },
+    { 
+      "name": "Redux", 
+      "level": 85, 
+      "category": "frontend", 
+      "logoPath": "/images/skills/redux.svg"
+    },
+    { 
+      "name": "TypeScript", 
+      "level": 80, 
+      "category": "frontend", 
+      "logoPath": "/images/skills/typescript.svg"
+    },
+    { 
+      "name": "HTML/CSS", 
+      "level": 85, 
+      "category": "frontend", 
+      "logoPath": "/images/skills/html-css.svg"
+    },
+    { 
+      "name": "Swift (iOS)", 
+      "level": 70, 
+      "category": "frontend", 
+      "logoPath": "/images/skills/swift.svg"
+    },
+    { 
+      "name": "Kotlin (Android)", 
+      "level": 70, 
+      "category": "frontend", 
+      "logoPath": "/images/skills/kotlin.svg"
+    },
+    { 
+      "name": "Docker", 
+      "level": 85, 
+      "category": "cloud", 
+      "logoPath": "/images/skills/docker.svg"
+    },
+    { 
+      "name": "Kubernetes", 
+      "level": 80, 
+      "category": "cloud", 
+      "logoPath": "/images/skills/kubernetes.svg"
+    },
+    { 
+      "name": "Azure Cloud", 
+      "level": 75, 
+      "category": "cloud", 
+      "logoPath": "/images/skills/azure.svg"
+    },
+    { 
+      "name": "AWS", 
+      "level": 75, 
+      "category": "cloud", 
+      "logoPath": "/images/skills/aws.svg"
+    },
+    { 
+      "name": "OpenShift", 
+      "level": 75, 
+      "category": "cloud", 
+      "logoPath": "/images/skills/openshift.svg"
+    },
+    { 
+      "name": "CI/CD Pipelines", 
+      "level": 85, 
+      "category": "cloud", 
+      "logoPath": "/images/skills/cicd.svg"
+    },
+    { 
+      "name": "PostgreSQL", 
+      "level": 85, 
+      "category": "database", 
+      "logoPath": "/images/skills/postgresql.svg"
+    },
+    { 
+      "name": "MySQL", 
+      "level": 85, 
+      "category": "database", 
+      "logoPath": "/images/skills/mysql.svg"
+    },
+    { 
+      "name": "MongoDB", 
+      "level": 80, 
+      "category": "database", 
+      "logoPath": "/images/skills/mongodb.svg"
+    },
+    { 
+      "name": "Oracle", 
+      "level": 80, 
+      "category": "database", 
+      "logoPath": "/images/skills/oracle.svg"
+    },
+    { 
+      "name": "Git", 
+      "level": 90, 
+      "category": "tools", 
+      "logoPath": "/images/skills/git.svg"
+    },
+    { 
+      "name": "Jenkins", 
+      "level": 85, 
+      "category": "tools", 
+      "logoPath": "/images/skills/jenkins.svg"
+    },
+    { 
+      "name": "Jira", 
+      "level": 85, 
+      "category": "tools", 
+      "logoPath": "/images/skills/jira.svg"
+    },
+    { 
+      "name": "Maven", 
+      "level": 85, 
+      "category": "tools", 
+      "logoPath": "/images/skills/maven.svg"
+    },
+    { 
+      "name": "SonarQube", 
+      "level": 80, 
+      "category": "tools", 
+      "logoPath": "/images/skills/sonarqube.svg"
+    },
+    { 
+      "name": "OAuth 2.0", 
+      "level": 85, 
+      "category": "backend", 
+      "logoPath": "/images/skills/oauth.svg"
+    },
+    { 
+      "name": "mTLS", 
+      "level": 80, 
+      "category": "backend", 
+      "logoPath": "/images/skills/mtls.svg"
+    },
+    { 
+      "name": "PCI DSS", 
+      "level": 75, 
+      "category": "tools", 
+      "logoPath": "/images/skills/pci-dss.svg"
+    }
+  ]
+} 

@@ -4,44 +4,10 @@ import React from 'react';
 import styles from './Education.module.css';
 import AnimatedElement from '@/components/layout/AnimatedElement';
 import SectionTitle from '@/components/layout/SectionTitle';
+import educationJson from '@/data/education.json';
 
-// Education data extracted from LinkedIn profile
-const educationData = [
-  {
-    id: 1,
-    institution: 'University of Calicut',
-    degree: 'Bachelor of Technology (B.Tech)',
-    field: 'Electronics and Communication Engineering',
-    period: 'Jun 2012 - Jun 2016',
-    location: 'Kerala, India',
-    logo: '🏛️'
-  }/*,
-  {
-    id: 2,
-    institution: 'Government Engineering College, Sreekrishnapuram',
-    degree: 'B.Tech',
-    field: 'Electronics and Communication Engineering',
-    period: '2012 - 2016',
-    location: 'Kerala, India',
-    logo: '🏫'
-  }*/
-];
-
-// Certifications and additional qualifications
-const certificationsData = [
-  {
-    id: 1,
-    name: 'Team Champ Award',
-    issuer: 'IBS Software',
-    date: 'Awarded for exceptional team contribution'
-  },
-  {
-    id: 2,
-    name: 'Spot On Award',
-    issuer: 'Mindtree',
-    date: 'Recognition for outstanding performance'
-  }
-];
+// Import education and certification data from JSON file
+const { educationData, certificationsData } = educationJson;
 
 /**
  * Education section component
