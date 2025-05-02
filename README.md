@@ -60,6 +60,7 @@ All website content is stored in JSON files in the `src/data` directory. To cust
 - `education.json` - Education history and certifications
 - `experience.json` - Work history and professional experience
 - `hero.json` - Hero section content, including headline and intro text
+- `metadata.json` - SEO metadata, Open Graph and Twitter card settings
 - `projects.json` - Portfolio projects with descriptions and links
 - `skills.json` - Technical skills categorized by type
 - `testimonials.json` - Client/colleague testimonials

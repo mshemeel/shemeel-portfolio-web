@@ -92,13 +92,14 @@
   - [x] Move about data to about.json
   - [x] Move contact data to contact.json
   - [x] Move hero data to hero.json
+  - [x] Move SEO metadata to metadata.json
   - [x] Update components to import from JSON files
   - [x] Update README with detailed instructions on content configuration
 
 ## Deployment
 - [ ] Deploy to Vercel
 - [ ] Set up custom domain (if applicable)
-- [ ] Configure SEO metadata
+- [x] Configure SEO metadata
 - [ ] Add analytics tracking
 
 ## Bugs & Issues Fixed

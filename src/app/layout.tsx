@@ -1,8 +1,9 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import MainLayout from "@/components/layout/MainLayout";
 import { ThemeProvider } from "@/context/ThemeContext";
+import metadataConfig from "@/data/metadata.json";
 
 // Initialize Inter font
 const inter = Inter({
@@ -11,12 +12,24 @@ const inter = Inter({
   variable: "--font-inter",
 });
 
+// Generate metadata from configuration file
 export const metadata: Metadata = {
-  title: "Muhammed Shemeel | Full Stack Developer",
-  description: "Portfolio website of Muhammed Shemeel, an experienced Full Stack Developer specialized in Java, Spring Boot, and React.",
-  keywords: "Muhammed Shemeel, Full Stack Developer, Java, Spring Boot, React, Software Engineer, Web Developer",
-  authors: [{ name: "Muhammed Shemeel" }],
-  creator: "Muhammed Shemeel",
+  title: metadataConfig.title,
+  description: metadataConfig.description,
+  keywords: metadataConfig.keywords,
+  authors: metadataConfig.authors,
+  creator: metadataConfig.creator,
+  openGraph: metadataConfig.openGraph,
+  twitter: metadataConfig.twitter,
+  robots: metadataConfig.robots,
+};
+
+// Viewport configuration
+export const viewport: Viewport = {
+  themeColor: metadataConfig.themeColor,
+  colorScheme: 'light dark',
+  width: 'device-width',
+  initialScale: 1,
 };
 
 export default function RootLayout({
@@ -25,7 +38,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={inter.variable}>
+    <html lang={metadataConfig.language} className={inter.variable}>
       <body>
         <ThemeProvider>
           <MainLayout>{children}</MainLayout>

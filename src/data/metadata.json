@@ -1,0 +1,30 @@
+{
+  "title": "Muhammed Shemeel | Full Stack Developer",
+  "description": "Portfolio website of Muhammed Shemeel, an experienced Full Stack Developer specialized in Java, Spring Boot, and React.",
+  "keywords": "Muhammed Shemeel, Full Stack Developer, Java, Spring Boot, React, Software Engineer, Web Developer",
+  "authors": [
+    {
+      "name": "Muhammed Shemeel"
+    }
+  ],
+  "creator": "Muhammed Shemeel",
+  "language": "en",
+  "themeColor": "#ffffff",
+  "colorScheme": "light dark",
+  "robots": "index, follow",
+  "viewport": "width=device-width, initial-scale=1",
+  "openGraph": {
+    "title": "Muhammed Shemeel | Full Stack Developer",
+    "description": "Experienced Full Stack Developer specialized in Java, Spring Boot, and React",
+    "url": "https://muhammedshemeel.com",
+    "siteName": "Muhammed Shemeel Portfolio",
+    "locale": "en_US",
+    "type": "website"
+  },
+  "twitter": {
+    "card": "summary_large_image",
+    "title": "Muhammed Shemeel | Full Stack Developer",
+    "description": "Experienced Full Stack Developer specialized in Java, Spring Boot, and React",
+    "creator": "@your_twitter_handle"
+  }
+} 
