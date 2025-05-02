@@ -1,0 +1,43 @@
+.animated {
+  opacity: 0;
+  will-change: transform, opacity;
+  transition-property: transform, opacity;
+  transition-duration: var(--duration, 0.5s);
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-delay: var(--delay, 0s);
+}
+
+.visible {
+  opacity: 1;
+  transform: none !important;
+}
+
+/* Fade up animation */
+.fade-up {
+  transform: translateY(30px);
+}
+
+/* Fade down animation */
+.fade-down {
+  transform: translateY(-30px);
+}
+
+/* Fade left animation */
+.fade-left {
+  transform: translateX(30px);
+}
+
+/* Fade right animation */
+.fade-right {
+  transform: translateX(-30px);
+}
+
+/* Zoom in animation */
+.zoom-in {
+  transform: scale(0.95);
+}
+
+/* Zoom out animation */
+.zoom-out {
+  transform: scale(1.05);
+} 

@@ -1,0 +1,235 @@
+.testimonials {
+  padding: var(--space-24) 0;
+  background-color: var(--background);
+  overflow: hidden;
+}
+
+.carouselContainer {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  margin-top: var(--space-12);
+}
+
+.carousel {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 100%;
+}
+
+.testimonialCard {
+  min-width: 100%;
+  padding: 0 var(--space-4);
+}
+
+.testimonialContent {
+  background-color: var(--background-alt);
+  border-radius: var(--radius-lg);
+  padding: var(--space-8);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  position: relative;
+}
+
+.quoteIcon {
+  position: absolute;
+  top: var(--space-6);
+  left: var(--space-6);
+  color: var(--primary);
+  opacity: 0.2;
+}
+
+.recommendation {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: var(--foreground);
+  margin-bottom: var(--space-6);
+  padding-top: var(--space-8);
+  position: relative;
+  z-index: 1;
+  white-space: pre-line;
+  max-height: 180px;
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out;
+}
+
+.recommendation.expanded {
+  max-height: 1000px;
+}
+
+.recommendation p {
+  margin: 0;
+}
+
+.readMoreBtn {
+  background: none;
+  border: none;
+  color: var(--primary);
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0;
+  margin-top: var(--space-2);
+  display: block;
+  position: relative;
+  z-index: 2;
+}
+
+.readMoreBtn:hover {
+  text-decoration: underline;
+}
+
+/* Add a gradient overlay at the bottom of non-expanded cards */
+.recommendation:not(.expanded)::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background: linear-gradient(to bottom, transparent, var(--background-alt));
+  pointer-events: none;
+}
+
+.testimonialFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--border);
+  padding-top: var(--space-4);
+}
+
+.testimonialProfile {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.profileInitial {
+  width: 50px;
+  height: 50px;
+  border-radius: var(--radius-full);
+  background-color: var(--primary);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.profileImage {
+  width: 50px;
+  height: 50px;
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  background-color: var(--border-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profileImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.testimonialName {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.linkedInLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--foreground-muted);
+  transition: color var(--transition-normal);
+  margin-left: var(--space-1);
+}
+
+.linkedInLink:hover {
+  color: #0077b5; /* LinkedIn blue */
+}
+
+.testimonialInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.testimonialName {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: var(--space-1);
+  color: var(--foreground);
+}
+
+.testimonialPosition {
+  font-size: 0.875rem;
+  color: var(--foreground-muted);
+}
+
+.testimonialDate {
+  font-size: 0.75rem;
+  color: var(--foreground-muted);
+}
+
+.carouselControls {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--space-6);
+}
+
+.carouselDots {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: var(--radius-full);
+  background-color: var(--border-dark);
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+}
+
+.dot.active {
+  background-color: var(--primary);
+  transform: scale(1.2);
+}
+
+@media screen and (max-width: 768px) {
+  .recommendation {
+    font-size: 1rem;
+    padding-top: var(--space-6);
+  }
+  
+  .testimonialFooter {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-3);
+  }
+  
+  .testimonialDate {
+    align-self: flex-end;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .profileImage, .profileInitial {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .profileInitial {
+    font-size: 1.25rem;
+  }
+  
+  .recommendation {
+    max-height: 300px;
+    overflow-y: auto;
+    padding-right: var(--space-2);
+  }
+} 

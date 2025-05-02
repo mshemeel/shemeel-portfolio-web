@@ -1,0 +1,213 @@
+.experience {
+  padding: var(--space-24) 0;
+  background-color: var(--background-alt);
+  overflow: hidden;
+}
+
+.timelineContainer {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: var(--space-12);
+}
+
+/* The vertical line */
+.timelineContainer::after {
+  content: '';
+  position: absolute;
+  width: 4px;
+  background-color: var(--primary);
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -2px;
+}
+
+.timelineItem {
+  padding: 10px 40px;
+  position: relative;
+  width: 50%;
+  box-sizing: border-box;
+  margin-bottom: var(--space-12);
+}
+
+/* The circles on the timeline */
+.timelineItem::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: var(--background);
+  border: 4px solid var(--primary);
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* Place the container to the left */
+.left {
+  left: 0;
+}
+
+/* Place the container to the right */
+.right {
+  left: 50%;
+}
+
+/* Add arrows to the left container */
+.left::before {
+  content: " ";
+  position: absolute;
+  top: 24px;
+  right: 30px;
+  border: medium solid var(--border);
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent var(--border);
+}
+
+/* Add arrows to the right container */
+.right::before {
+  content: " ";
+  position: absolute;
+  top: 24px;
+  left: 30px;
+  border: medium solid var(--border);
+  border-width: 10px 10px 10px 0;
+  border-color: transparent var(--border) transparent transparent;
+}
+
+/* Fix the circle for containers on the right side */
+.left::after {
+  right: -14px;
+}
+
+/* Fix the circle for containers on the right side */
+.right::after {
+  left: -14px;
+}
+
+.timelineContent {
+  padding: var(--space-6);
+  background-color: var(--background);
+  border-radius: var(--radius-md);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.timelineContent:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.timelineHeader {
+  margin-bottom: var(--space-4);
+  border-bottom: 1px solid var(--border);
+  padding-bottom: var(--space-4);
+}
+
+.role {
+  font-size: 1.5rem;
+  margin-bottom: var(--space-1);
+  color: var(--foreground);
+}
+
+.company {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--primary);
+  margin-bottom: var(--space-2);
+}
+
+.period {
+  font-size: 0.875rem;
+  color: var(--foreground-muted);
+  margin-bottom: var(--space-1);
+}
+
+.location {
+  font-size: 0.875rem;
+  color: var(--foreground-muted);
+}
+
+.description {
+  margin-bottom: var(--space-4);
+  line-height: 1.6;
+}
+
+.technologiesContainer {
+  margin-top: var(--space-4);
+  margin-bottom: var(--space-4);
+}
+
+.techTitle, .listTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: var(--space-2);
+  color: var(--foreground);
+}
+
+.technologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.techBadge {
+  display: inline-block;
+  padding: var(--space-1) var(--space-2);
+  background-color: rgba(37, 99, 235, 0.1);
+  color: var(--primary);
+  border-radius: var(--radius-md);
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.listContainer {
+  margin-top: var(--space-4);
+}
+
+.responsibilitiesList, .achievementsList {
+  padding-left: var(--space-6);
+}
+
+.listItem {
+  margin-bottom: var(--space-2);
+  line-height: 1.6;
+  position: relative;
+}
+
+.listItem::before {
+  content: '';
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background-color: var(--primary);
+  border-radius: 50%;
+  left: -16px;
+  top: 10px;
+}
+
+@media screen and (max-width: 768px) {
+  .timelineContainer::after {
+    left: 31px;
+  }
+  
+  .timelineItem {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 25px;
+  }
+  
+  .timelineItem::before {
+    left: 60px;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent var(--border) transparent transparent;
+  }
+  
+  .left::after, .right::after {
+    left: 17px;
+  }
+  
+  .right {
+    left: 0;
+  }
+} 
