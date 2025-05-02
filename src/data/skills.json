@@ -52,31 +52,31 @@
     },
     { 
       "name": "Go Lang", 
-      "level": 70, 
+      "level": 50,
       "category": "backend", 
       "logoPath": "/images/skills/golang.svg"
     },
     { 
       "name": "React.js", 
-      "level": 85, 
+      "level": 75,
       "category": "frontend", 
       "logoPath": "/images/skills/react.svg"
     },
     { 
       "name": "React Native", 
-      "level": 80, 
+      "level": 75,
       "category": "frontend", 
       "logoPath": "/images/skills/react-native.svg"
     },
     { 
       "name": "Redux", 
-      "level": 85, 
+      "level": 75,
       "category": "frontend", 
       "logoPath": "/images/skills/redux.svg"
     },
     { 
       "name": "TypeScript", 
-      "level": 80, 
+      "level": 50,
       "category": "frontend", 
       "logoPath": "/images/skills/typescript.svg"
     },
@@ -88,13 +88,13 @@
     },
     { 
       "name": "Swift (iOS)", 
-      "level": 70, 
+      "level": 25,
       "category": "frontend", 
       "logoPath": "/images/skills/swift.svg"
     },
     { 
       "name": "Kotlin (Android)", 
-      "level": 70, 
+      "level": 25,
       "category": "frontend", 
       "logoPath": "/images/skills/kotlin.svg"
     },
@@ -112,19 +112,19 @@
     },
     { 
       "name": "Azure Cloud", 
-      "level": 75, 
+      "level": 50,
       "category": "cloud", 
       "logoPath": "/images/skills/azure.svg"
     },
     { 
       "name": "AWS", 
-      "level": 75, 
+      "level": 25,
       "category": "cloud", 
       "logoPath": "/images/skills/aws.svg"
     },
     { 
       "name": "OpenShift", 
-      "level": 75, 
+      "level": 50,
       "category": "cloud", 
       "logoPath": "/images/skills/openshift.svg"
     },
@@ -199,12 +199,6 @@
       "level": 80, 
       "category": "backend", 
       "logoPath": "/images/skills/mtls.svg"
-    },
-    { 
-      "name": "PCI DSS", 
-      "level": 75, 
-      "category": "tools", 
-      "logoPath": "/images/skills/pci-dss.svg"
     }
   ]
 } 
