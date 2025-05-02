@@ -33,21 +33,20 @@ export default function About() {
           
           <AnimatedElement animation="fade-left" delay={0.3} className={styles.textColumn}>
             <div className={styles.aboutText}>
-              <p className={styles.paragraph}>
-                Experienced Java Full Stack Developer with a proven track record of successfully delivering high-quality software solutions. 
-                With 7 years of hands-on experience, I've honed my skills in a diverse range of technologies including Java, 
-                Spring Boot, Spring Cloud, and microservices architecture.
+              <p className={styles.bio}>
+                Experienced Full Stack Developer with 7+ years of expertise in Java, Spring Boot, and React. 
+                Proficient in building scalable microservices and cloud-native applications with a focus on 
+                performance and maintainability. Currently working on fintech solutions at Network International, 
+                where I&apos;ve successfully implemented Apple Tap to Pay in the UAE region.
               </p>
-              
-              <p className={styles.paragraph}>
-                My passion for crafting efficient and scalable applications has driven me to excel in front-end technologies as well, 
-                including React.js, React Native, and Redux. Throughout my career, I've collaborated with cross-functional teams to design, 
-                develop, and deploy complex applications that meet both user needs and business objectives.
+              <p className={styles.bio}>
+                I specialize in designing and implementing complex enterprise applications, with strong 
+                experience across the entire development lifecycle. My technical skills include Java, Spring Boot, 
+                React, Go Lang, and cloud technologies. I&apos;m passionate about creating clean, efficient code and 
+                delivering exceptional user experiences.
               </p>
-              
-              <p className={styles.paragraph}>
-                My expertise lies in creating robust back-end systems that power intuitive and seamless user experiences on the front end.
-                I'm passionate about clean code, following best practices, and continuously improving my skills.
+              <p className={styles.bio}>
+                Let&apos;s connect to discuss how my skills and experience can contribute to your team&apos;s success.
               </p>
             </div>
             

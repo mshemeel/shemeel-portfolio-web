@@ -110,10 +110,10 @@ export default function Contact() {
         
         <div className={styles.contactContent}>
           <AnimatedElement animation="fade-right" delay={0.2} className={styles.contactInfo}>
-            <h3 className={styles.infoTitle}>Let's Talk</h3>
+            <h3 className={styles.infoTitle}>Let&apos;s Talk</h3>
             <p className={styles.infoText}>
               Feel free to reach out if you have any questions, want to discuss potential collaboration,
-              or just want to say hello. I'm always open to new opportunities and connections.
+              or just want to say hello. I&apos;m always open to new opportunities and connections.
             </p>
             
             <div className={styles.contactItem}>

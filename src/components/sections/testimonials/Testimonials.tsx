@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import Image from 'next/image';
 import styles from './Testimonials.module.css';
 import AnimatedElement from '@/components/layout/AnimatedElement';
 import SectionTitle from '@/components/layout/SectionTitle';
@@ -100,7 +99,7 @@ export default function Testimonials() {
         
         <div className={styles.carouselContainer}>
           <div className={styles.carousel} style={{ transform: `translateX(-${activeIndex * 100}%)` }}>
-            {testimonials.map((testimonial, index) => (
+            {testimonials.map((testimonial) => (
               <div key={testimonial.id} className={styles.testimonialCard}>
                 <div className={styles.testimonialContent}>
                   <div className={styles.quoteIcon}>
