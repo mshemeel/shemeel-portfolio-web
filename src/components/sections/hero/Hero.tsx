@@ -63,7 +63,7 @@ export default function Hero() {
                     className={button.isPrimary ? styles.primaryButton : styles.secondaryButton}
                   >
                     {button.text}
-                  </a>
+                </a>
                 ))}
               </div>
             </AnimatedElement>

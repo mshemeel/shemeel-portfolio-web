@@ -8,6 +8,7 @@ A modern, responsive developer portfolio built with Next.js, featuring customiza
 - Animated elements and smooth scrolling
 - Light/Dark mode toggle
 - Fully customizable content via JSON files
+- Contact form with EmailJS integration
 - SEO optimized
 - Built with Next.js, TypeScript, and CSS Modules
 
@@ -17,6 +18,7 @@ A modern, responsive developer portfolio built with Next.js, featuring customiza
 
 - Node.js 18.17 or later
 - npm, yarn, or pnpm package manager
+- EmailJS account for contact form
 
 ### Installation
 
@@ -37,7 +39,16 @@ yarn install
 pnpm install
 ```
 
-3. Run the development server:
+3. Set up environment variables:
+   Create a `.env.local` file in the root directory with the following variables:
+
+```
+NEXT_PUBLIC_EMAILJS_SERVICE_ID=your_service_id
+NEXT_PUBLIC_EMAILJS_TEMPLATE_ID=your_template_id
+NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=your_public_key
+```
+
+4. Run the development server:
 
 ```bash
 npm run dev
@@ -48,6 +59,18 @@ pnpm dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+## Setting up EmailJS
+
+1. Create an account at [EmailJS](https://www.emailjs.com/)
+2. Create a new service using your preferred email provider (Gmail, Outlook, etc.)
+3. Create an email template with the following variables:
+   - `{{name}}` - Sender's name
+   - `{{email}}` - Sender's email
+   - `{{subject}}` - Email subject
+   - `{{message}}` - Email message
+4. Note your Service ID, Template ID, and User ID (Public Key)
+5. Add these values to your `.env.local` file
 
 ## Customizing Content
 

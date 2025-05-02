@@ -41,7 +41,7 @@ export default function RootLayout({
     <html lang={metadataConfig.language} className={inter.variable}>
       <body>
         <ThemeProvider>
-          <MainLayout>{children}</MainLayout>
+        <MainLayout>{children}</MainLayout>
         </ThemeProvider>
       </body>
     </html>

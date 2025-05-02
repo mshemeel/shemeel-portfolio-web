@@ -48,7 +48,7 @@ export default function About() {
                 <div key={index} className={styles.statItem}>
                   <h3 className={styles.statNumber}>{stat.number}</h3>
                   <p className={styles.statLabel} dangerouslySetInnerHTML={{ __html: stat.label }}></p>
-                </div>
+              </div>
               ))}
             </div>
             

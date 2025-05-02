@@ -42,17 +42,17 @@ export default function Header() {
 
         <div className={styles.rightContainer}>
           <ThemeToggle />
-          
-          <button 
-            className={`${styles.menuButton} ${isMenuOpen ? styles.open : ''}`} 
-            onClick={toggleMenu}
-            aria-label="Toggle menu"
-            aria-expanded={isMenuOpen}
-          >
-            <span className={styles.menuBar}></span>
-            <span className={styles.menuBar}></span>
-            <span className={styles.menuBar}></span>
-          </button>
+
+        <button 
+          className={`${styles.menuButton} ${isMenuOpen ? styles.open : ''}`} 
+          onClick={toggleMenu}
+          aria-label="Toggle menu"
+          aria-expanded={isMenuOpen}
+        >
+          <span className={styles.menuBar}></span>
+          <span className={styles.menuBar}></span>
+          <span className={styles.menuBar}></span>
+        </button>
         </div>
 
         <nav className={`${styles.nav} ${isMenuOpen ? styles.open : ''}`}>
