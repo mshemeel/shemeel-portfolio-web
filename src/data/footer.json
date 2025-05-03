@@ -1,0 +1,51 @@
+{
+  "name": "Muhammed Shemeel",
+  "title": "Full Stack Developer",
+  "socialLinks": [
+    {
+      "id": "linkedin",
+      "url": "https://www.linkedin.com/in/mshemeel007/",
+      "ariaLabel": "LinkedIn"
+    },
+    {
+      "id": "github",
+      "url": "https://github.com/mshemeel",
+      "ariaLabel": "GitHub"
+    },
+    {
+      "id": "email",
+      "url": "mailto:mshemeel007@gmail.com",
+      "ariaLabel": "Email"
+    }
+  ],
+  "navItems": [
+    {
+      "id": "about",
+      "label": "About",
+      "href": "#about"
+    },
+    {
+      "id": "experience",
+      "label": "Experience",
+      "href": "#experience"
+    },
+    {
+      "id": "skills",
+      "label": "Skills",
+      "href": "#skills"
+    },
+    {
+      "id": "projects",
+      "label": "Projects",
+      "href": "#projects"
+    },
+    {
+      "id": "contact",
+      "label": "Contact",
+      "href": "#contact"
+    }
+  ],
+  "copyright": {
+    "text": "All rights reserved."
+  }
+} 

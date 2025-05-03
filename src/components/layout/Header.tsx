@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import styles from './Header.module.css';
 import ThemeToggle from '@/components/ThemeToggle';
+import headerData from '@/data/header.json';
 
 /**
  * Header component with responsive navigation
@@ -36,8 +37,8 @@ export default function Header() {
   return (
     <header className={`${styles.header} ${scrollPosition > 50 ? styles.scrolled : ''}`}>
       <div className={styles.container}>
-        <Link href="/" className={styles.logo} onClick={closeMenu}>
-          <span className={styles.name}>Muhammed Shemeel</span>
+        <Link href={headerData.logoLink} className={styles.logo} onClick={closeMenu}>
+          <span className={styles.name}>{headerData.name}</span>
         </Link>
 
         <div className={styles.rightContainer}>
@@ -57,41 +58,13 @@ export default function Header() {
 
         <nav className={`${styles.nav} ${isMenuOpen ? styles.open : ''}`}>
           <ul className={styles.navList}>
-            <li className={styles.navItem}>
-              <Link href="#about" className={styles.navLink} onClick={closeMenu}>
-                About
-              </Link>
-            </li>
-            <li className={styles.navItem}>
-              <Link href="#experience" className={styles.navLink} onClick={closeMenu}>
-                Experience
-              </Link>
-            </li>
-            <li className={styles.navItem}>
-              <Link href="#skills" className={styles.navLink} onClick={closeMenu}>
-                Skills
-              </Link>
-            </li>
-            <li className={styles.navItem}>
-              <Link href="#education" className={styles.navLink} onClick={closeMenu}>
-                Education
-              </Link>
-            </li>
-            <li className={styles.navItem}>
-              <Link href="#projects" className={styles.navLink} onClick={closeMenu}>
-                Projects
-              </Link>
-            </li>
-            <li className={styles.navItem}>
-              <Link href="#testimonials" className={styles.navLink} onClick={closeMenu}>
-                Testimonials
-              </Link>
-            </li>
-            <li className={styles.navItem}>
-              <Link href="#contact" className={styles.navLink} onClick={closeMenu}>
-                Contact
-              </Link>
-            </li>
+            {headerData.navItems.map((item) => (
+              <li key={item.id} className={styles.navItem}>
+                <Link href={item.href} className={styles.navLink} onClick={closeMenu}>
+                  {item.label}
+                </Link>
+              </li>
+            ))}
             <li className={styles.navItem + ' ' + styles.mobileThemeToggle}>
               <ThemeToggle />
             </li>

@@ -13,6 +13,7 @@
 - [x] Build Header with responsive navigation
 - [x] Build Footer with social links
 - [x] Create MainLayout component
+- [x] Make Header and Footer configurable from JSON data
 
 ## Sections
 - [x] Hero Section
@@ -97,6 +98,8 @@
   - [x] Move contact data to contact.json
   - [x] Move hero data to hero.json
   - [x] Move SEO metadata to metadata.json
+  - [x] Move header data to header.json
+  - [x] Move footer data to footer.json
   - [x] Update components to import from JSON files
   - [x] Update README with detailed instructions on content configuration
 
