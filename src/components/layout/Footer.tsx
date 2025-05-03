@@ -7,12 +7,6 @@ import footerData from '@/data/footer.json';
 
 type SocialIconKey = 'linkedin' | 'github' | 'email';
 
-interface SocialLink {
-  id: SocialIconKey;
-  url: string;
-  ariaLabel: string;
-}
-
 /**
  * Footer component with social links and copyright information
  */
