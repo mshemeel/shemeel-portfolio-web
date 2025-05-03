@@ -29,6 +29,7 @@
   - [x] Create timeline component
   - [x] Add company details and job descriptions
   - [x] Implement technology tags
+  - [x] Add company logos with links to company websites
   
 - [x] Skills Section
   - [x] Create skill category filters
@@ -58,6 +59,7 @@
   - [x] Add social media links
   - [x] Implement form submission functionality
   - [x] Fix unescaped entities in Contact component
+  - [x] Implement EmailJS for client-side email sending
 
 ## Assets
 - [x] Add profile photo to public folder
@@ -67,12 +69,14 @@
 - [x] Add social media icons
 - [x] Create favicon
 - [x] Create script to download tech logos from Simple Icons repository
+- [ ] Add company logos to `/public/images/companies/` folder
 
 ## Testing & Optimization
 - [x] Test responsive design on all device sizes
 - [x] Check accessibility compliance
 - [x] Optimize performance (Lighthouse score)
 - [x] Test form submission
+- [ ] Test email functionality with EmailJS
 - [x] Check for browser compatibility
 - [x] Update next.config.ts to ignore TypeScript errors during build
 

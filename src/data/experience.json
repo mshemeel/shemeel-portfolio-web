@@ -3,6 +3,8 @@
     {
       "id": 1,
       "company": "Network International",
+      "logoUrl": "/images/companies/logo-network.svg",
+      "websiteUrl": "https://www.network.ae/",
       "role": "Technical Specialist",
       "period": "Aug 2023 - Present",
       "location": "Dubai, United Arab Emirates",
@@ -54,6 +56,8 @@
     {
       "id": 2,
       "company": "LTIMindtree",
+      "logoUrl": "/images/companies/logo-mindtree.png",
+      "websiteUrl": "https://www.ltimindtree.com/",
       "role": "Specialist - Software Engineering",
       "period": "Mar 2022 - Jul 2023",
       "location": "Tamil Nadu, India / Hybrid",
@@ -94,6 +98,8 @@
     {
       "id": 3,
       "company": "IBS Software",
+      "logoUrl": "/images/companies/logo-ibs.png",
+      "websiteUrl": "https://www.ibsplc.com/",
       "role": "Senior Product Engineer",
       "period": "Apr 2019 - Mar 2022",
       "location": "Kerala, India/ Tokyo,Japan",
@@ -127,6 +133,8 @@
     {
       "id": 4,
       "company": "Allianz Technology",
+      "logoUrl": "/images/companies/logo-allianz.png",
+      "websiteUrl": "https://tech.allianz.com/",
       "role": "Software Engineer",
       "period": "Sep 2017 - Apr 2019",
       "location": "Kerala, India",
@@ -152,6 +160,8 @@
     {
       "id": 5,
       "company": "Allianz Technology",
+      "logoUrl": "/images/companies/logo-allianz.png",
+      "websiteUrl": "https://tech.allianz.com/",
       "role": "Project Trainee",
       "period": "Sep 2017 - Nov 2017",
       "location": "Kerala, India",

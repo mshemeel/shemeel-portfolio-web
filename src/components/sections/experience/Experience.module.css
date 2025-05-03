@@ -110,11 +110,43 @@
   color: var(--foreground);
 }
 
+.companyContainer {
+  margin-bottom: var(--space-2);
+}
+
+.companyLogoLink {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  transition: opacity var(--transition-normal);
+}
+
+.companyLogoLink:hover {
+  opacity: 0.85;
+}
+
+.companyLogo {
+  height: 40px;
+  width: 80px;
+  margin-right: var(--space-3);
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border-radius: var(--radius-sm);
+  padding: var(--space-1);
+}
+
 .company {
   font-size: 1.25rem;
   font-weight: 600;
   color: var(--primary);
   margin-bottom: var(--space-2);
+  transition: color var(--transition-normal);
+}
+
+.companyLogoLink:hover .company {
+  color: var(--primary-dark);
+  text-decoration: underline;
 }
 
 .period {

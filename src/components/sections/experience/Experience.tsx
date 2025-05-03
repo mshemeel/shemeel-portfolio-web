@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 import styles from './Experience.module.css';
 import AnimatedElement from '@/components/layout/AnimatedElement';
 import SectionTitle from '@/components/layout/SectionTitle';
@@ -34,7 +35,32 @@ export default function Experience() {
               <div className={styles.timelineContent}>
                 <div className={styles.timelineHeader}>
                   <h3 className={styles.role}>{job.role}</h3>
-                  <div className={styles.company}>{job.company}</div>
+                  
+                  <div className={styles.companyContainer}>
+                    {job.logoUrl ? (
+                      <a 
+                        href={job.websiteUrl} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className={styles.companyLogoLink}
+                        title={`Visit ${job.company} website`}
+                      >
+                        <div className={styles.companyLogo}>
+                          <Image 
+                            src={job.logoUrl} 
+                            alt={`${job.company} logo`}
+                            width={80}
+                            height={40}
+                            style={{ objectFit: 'contain' }}
+                          />
+                        </div>
+                        <span className={styles.company}>{job.company}</span>
+                      </a>
+                    ) : (
+                      <div className={styles.company}>{job.company}</div>
+                    )}
+                  </div>
+                  
                   <div className={styles.period}>{job.period}</div>
                   <div className={styles.location}>{job.location}</div>
                 </div>
