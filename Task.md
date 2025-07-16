@@ -104,9 +104,9 @@
   - [x] Update README with detailed instructions on content configuration
 
 ## Deployment
-- [ ] Deploy to Vercel
-- [ ] Set up custom domain (if applicable)
-- [x] Configure SEO metadata
+- [x] Deploy to Vercel
+- [x] Set up custom domain (if applicable)
+- [ ] Configure SEO metadata
 - [ ] Add analytics tracking
 
 ## Bugs & Issues Fixed

@@ -5,6 +5,7 @@
     { "id": "frontend", "name": "Frontend" },
     { "id": "cloud", "name": "Cloud & DevOps" },
     { "id": "database", "name": "Database" },
+    { "id": "ai", "name": "AI tools" },
     { "id": "tools", "name": "Tools & Methodologies" }
   ],
   "skillsData": [
@@ -30,7 +31,7 @@
       "name": "Microservices", 
       "level": 90, 
       "category": "backend", 
-      "logoPath": "/images/skills/microservices.svg"
+      "logoPath": "/images/skills/microservice.png"
     },
     { 
       "name": "Spring WebFlux", 
@@ -79,6 +80,30 @@
       "level": 50,
       "category": "frontend", 
       "logoPath": "/images/skills/typescript.svg"
+    },
+    {
+      "name": "Cursor",
+      "level": 90,
+      "category": "ai",
+      "logoPath": "/images/ai/cursor.png"
+    },
+    {
+      "name": "Lovable",
+      "level": 70,
+      "category": "ai",
+      "logoPath": "/images/ai/lovable.png"
+    },
+    {
+      "name": "Claude",
+      "level": 90,
+      "category": "ai",
+      "logoPath": "/images/ai/claude-logo.png"
+    },
+    {
+      "name": "ChatGPT",
+      "level": 90,
+      "category": "ai",
+      "logoPath": "/images/ai/chatgpt-logo.png"
     },
     { 
       "name": "HTML/CSS", 
