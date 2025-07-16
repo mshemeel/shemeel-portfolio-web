@@ -36,16 +36,11 @@
         "Veracode"
       ],
       "responsibilities": [
-        "Collaborated with the development team to design and build scalable microservices using Java, Kotlin, Spring Boot, and Quarkus.",
-        "Developed and maintained RESTful APIs using Java and Kotlin with Spring and Quarkus frameworks; documented APIs using Swagger.",
-        "Built and enhanced UI components using React Native and Redux.",
-        "Wrote comprehensive unit tests with JUnit and Mockito to ensure code quality and reliability.",
-        "Developed behavior-driven feature tests using Cucumber to validate end-to-end functionality.",
-        "Participated in Agile development processes, following Kanban methodologies for efficient task management and delivery.",
-        "Conducted regular code reviews to enforce best practices and maintain high code standards.",
-        "Monitored and analyzed application logs using Kibana to identify and resolve production issues proactively, ensuring minimal downtime.",
-        "Delivered key upgrades, including successful migration of Keycloak, Java, and Spring Boot to their latest versions, improving performance and security.",
-        "Mentored junior developers as a team lead, guiding them on best practices, code quality, and project deliverables.",
+        "Spearheaded the development team that led to the successful launch of Apple Tap to Pay in the UAE, making the company the first in the region to offer this innovative iOS-based contactless payment solution, while designing and developing scalable microservices solutions adopting functional programming styles.",
+        "Contributed to development of enterprise-grade hybrid cloud solutions with multi-region scalability and comprehensive observability using Grafana, Prometheus, and ELK, Supported implementation of GitOps practices for automated deployment pipelines across distributed microservices.",
+        "Delivered comprehensive technical solutions by translating business requirements into scalable architectures, developing RESTful APIs with Java Spring Boot and Swagger, and building high-performance mobile features using React Native and Redux",
+        "Led high-performing development teams through Agile/Kanban methodologies, conducting code reviews, mentoring junior developers, and consistently delivering timely solutions while maintaining high system availability in production environments",
+        "Boosted development efficiency by 50% through AI-powered tools for code generation, debugging, and unit testing, while establishing testing frameworks with QA teams using JUnit, Mockito, and Cucumber BDD for intelligent test automation",
         "Provided prompt and effective solutions to technical and production issues to maintain workflow continuity and system stability."
       ],
       "achievements": [
@@ -86,13 +81,16 @@
         "Confluence"
       ],
       "responsibilities": [
-        "Provide prompt solutions and proactive troubleshooting support to swiftly resolve subtle and complex issues as the Module lead",
-        "Understanding the requirements of the customer and solutioning with architects",
-        "Designing, Coding & Unit and integration testing of the micro-service",
-        "Ensuring code coverage and resolution of sonar and fortify issues",
+        "Designed and developed scalable microservices and micro frontend solutions adopting functional programming styles, implementing RESTful web services using Spring Boot with comprehensive Swagger API documentation for seamless integrations",
+        "Ensured high code quality through comprehensive unit testing using JUnit and Mockito, implementing best practices including design patterns, modularization, and refactoring to maintain robust and maintainable codebases",
+        "Led Agile development initiatives using Scrum and Kanban methodologies, conducting thorough code reviews and mentoring junior developers to ensure adherence to coding standards and foster team growth",
+        "Collaborated effectively with QA teams to identify and resolve defects, ensuring timely delivery of high-quality software while maintaining rigorous testing standards and quality assurance processes",
+        "Engaged directly with customers to understand business requirements and resolve production issues efficiently, ensuring customer satisfaction and continuous improvement of software solutions",
         "Mentoring & guiding junior developers in troubleshooting and fixing issues",
-        "Supporting build and release activities and fixing environment issues",
         "Debugging & fixing issues reported in production"
+      ],
+      "achievements": [
+        "Successful migration of Allegiant Air's legacy booking system to Navitaire, enhancing system performance and reliability"
       ]
     },
     {
@@ -119,15 +117,14 @@
         "PostgreSQL"
       ],
       "responsibilities": [
-        "Designing, implementing, and maintaining Java-based web applications for mission-critical systems",
-        "Contributing to all phases of the development lifecycle",
-        "Writing well-designed, efficient, and testable code",
-        "Conducting testing, and debugging to fix issues",
-        "Improving code quality by implementing best practices",
-        "Interacting with customers and clarifying queries"
+        "Collaborated with cross-functional teams including customer, product management, and QA teams to understand user requirements, translate business needs into technical solutions, and ensure high-quality product delivery through Agile development methodologies",
+        "Architected and developed new features for the iCargo operations module, creating scalable solutions that meet customer requirements while adhering to coding standards and ensuring optimal performance and reliability",
+        "Built responsive user interfaces using modern front-end technologies including JSP, JavaScript, ReactJS, and Redux, delivering seamless user experiences across the iCargo platform",
+        "Developed robust backend services by implementing RESTful web services using Java and Spring framework, ensuring seamless integration between UI and backend systems with proper API architecture",
+        "Enhanced code quality and system reliability through implementation of design patterns, modularization, refactoring practices, and proactive customer support to resolve production issues efficiently while maintaining high performance standards"
       ],
       "achievements": [
-        "Involved in the design, development, testing & implementation of iCargo JTO for Japan Airlines"
+        "Successful implementation of iCargo JTO for Japan Airlines"
       ]
     },
     {
@@ -151,10 +148,10 @@
         "Oracle"
       ],
       "responsibilities": [
-        "Developed REST APIs using Java and Spring framework to integrate different systems with the Guidewire ClaimCenter application.",
-        "Conducted unit testing and debugging of the APIs to identify and resolve bugs.",
-        "Collaborated with team members to ensure successful integration of the APIs.",
-        "Supported build and deployment of the applications."
+        "Engineered robust REST APIs using Java and Spring framework to seamlessly integrate multiple systems with Guidewire Claim Center application, enabling streamlined data flow and enhanced system interoperability",
+        "Ensured exceptional code quality through comprehensive unit testing and strategic debugging methodologies, proactively identifying and resolving critical bugs to maintain optimal API performance",
+        "Orchestrated cross-functional collaboration with development teams to guarantee flawless API integration, fostering seamless communication and ensuring successful project delivery across all stakeholders",
+        "Streamlined deployment processes by actively supporting build and deployment pipelines, ensuring reliable application delivery and maintaining high system availability across production environments"
       ]
     },
     {

@@ -1,0 +1,20 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- ChatGPT's hexagonal knot logo -->
+  <g transform="translate(16, 16)">
+    <!-- Outer hexagonal shape with rounded corners -->
+    <path d="M-8 -14 C-6 -15, -2 -15, 0 -14 L8 -14 C10 -13, 12 -11, 13 -9 L13 -1 C14 1, 14 5, 13 7 L13 15 C12 17, 10 19, 8 20 L0 20 C-2 21, -6 21, -8 20 L-16 20 C-18 19, -20 17, -21 15 L-21 7 C-22 5, -22 1, -21 -1 L-21 -9 C-20 -11, -18 -13, -16 -14 Z" fill="#000000" stroke="none"/>
+    
+    <!-- Inner interlocking pattern -->
+    <g fill="white">
+      <!-- Top loop -->
+      <path d="M-6 -10 C-8 -8, -8 -4, -6 -2 C-4 0, 0 0, 2 -2 C4 -4, 4 -8, 2 -10 C0 -12, -4 -12, -6 -10 Z"/>
+      <!-- Middle intersection -->
+      <circle cx="0" cy="0" r="3" fill="#000000"/>
+      <!-- Bottom loop -->
+      <path d="M6 10 C8 8, 8 4, 6 2 C4 0, 0 0, -2 2 C-4 4, -4 8, -2 10 C0 12, 4 12, 6 10 Z"/>
+      <!-- Side connectors -->
+      <ellipse cx="-8" cy="0" rx="2" ry="6" fill="white"/>
+      <ellipse cx="8" cy="0" rx="2" ry="6" fill="white"/>
+    </g>
+  </g>
+</svg>
