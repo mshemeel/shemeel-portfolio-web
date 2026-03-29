@@ -5,7 +5,7 @@
   "authors": [
     {
       "name": "Muhammed Shemeel",
-      "url": "https://muhammedshemeel.com"
+      "url": "https://mshemeel.com"
     }
   ],
   "creator": "Muhammed Shemeel",
@@ -15,9 +15,9 @@
   "colorScheme": "light dark",
   "robots": "index, follow, max-image-preview:large",
   "viewport": "width=device-width, initial-scale=1",
-  "canonical": "https://muhammedshemeel.com",
+  "canonical": "https://mshemeel.com",
   "alternates": {
-    "canonical": "https://muhammedshemeel.com"
+    "canonical": "https://mshemeel.com"
   },
   "icons": {
     "icon": "/favicon.ico",
@@ -28,7 +28,7 @@
   "openGraph": {
     "title": "Muhammed Shemeel | Full Stack Developer",
     "description": "Experienced Full Stack Developer specializing in Java, Spring Boot, React, and Fintech solutions. View my portfolio showcasing 7+ years of enterprise development.",
-    "url": "https://muhammedshemeel.com",
+    "url": "https://shemeel.com",
     "siteName": "Muhammed Shemeel Portfolio",
     "locale": "en_US",
     "type": "website",

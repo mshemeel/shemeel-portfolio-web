@@ -29,7 +29,9 @@ export default function About() {
               <div className={styles.profileImageContainer}></div>
               <div className={styles.experienceBadge}>
                 <span className={styles.years}>{stats[0].number}</span>
-                <span className={styles.text} dangerouslySetInnerHTML={{ __html: stats[0].label }}></span>
+                <span className={styles.text}>{stats[0].label.split(/<br\s*\/?>/i).map((part, i, arr) => (
+                  <React.Fragment key={i}>{part}{i < arr.length - 1 && <br />}</React.Fragment>
+                ))}</span>
               </div>
             </div>
           </AnimatedElement>
@@ -47,7 +49,9 @@ export default function About() {
               {stats.map((stat, index) => (
                 <div key={index} className={styles.statItem}>
                   <h3 className={styles.statNumber}>{stat.number}</h3>
-                  <p className={styles.statLabel} dangerouslySetInnerHTML={{ __html: stat.label }}></p>
+                  <p className={styles.statLabel}>{stat.label.split(/<br\s*\/?>/i).map((part, i, arr) => (
+                    <React.Fragment key={i}>{part}{i < arr.length - 1 && <br />}</React.Fragment>
+                  ))}</p>
               </div>
               ))}
             </div>

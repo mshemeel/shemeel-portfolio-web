@@ -30,6 +30,7 @@ export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitMessage, setSubmitMessage] = useState('');
   const [submitStatus, setSubmitStatus] = useState<'success' | 'error' | ''>('');
+  const [cooldown, setCooldown] = useState(0);
 
   // Initialize EmailJS once when component mounts
   useEffect(() => {
@@ -51,11 +52,17 @@ export default function Contact() {
     if (!formData.name.trim()) {
       newErrors.name = 'Name is required';
       isValid = false;
+    } else if (formData.name.length > 100) {
+      newErrors.name = 'Name must be 100 characters or less';
+      isValid = false;
     }
 
     // Email validation
     if (!formData.email.trim()) {
       newErrors.email = 'Email is required';
+      isValid = false;
+    } else if (formData.email.length > 254) {
+      newErrors.email = 'Email must be 254 characters or less';
       isValid = false;
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
       newErrors.email = 'Please enter a valid email address';
@@ -65,6 +72,9 @@ export default function Contact() {
     // Message validation
     if (!formData.message.trim()) {
       newErrors.message = 'Message is required';
+      isValid = false;
+    } else if (formData.message.length > 5000) {
+      newErrors.message = 'Message must be 5000 characters or less';
       isValid = false;
     }
 
@@ -110,6 +120,15 @@ export default function Contact() {
       if (result.text === 'OK') {
         setSubmitStatus('success');
         setSubmitMessage('Your message has been sent successfully!');
+
+        // Start cooldown timer
+        setCooldown(60);
+        const interval = setInterval(() => {
+          setCooldown(prev => {
+            if (prev <= 1) { clearInterval(interval); return 0; }
+            return prev - 1;
+          });
+        }, 1000);
 
         // Reset form
         setFormData({
@@ -226,6 +245,7 @@ export default function Contact() {
                       name="name"
                       value={formData.name}
                       onChange={handleChange}
+                      maxLength={100}
                       className={`${styles.input} ${errors.name ? styles.error : ''}`}
                       placeholder="Your full name"
                   />
@@ -240,6 +260,7 @@ export default function Contact() {
                       name="email"
                       value={formData.email}
                       onChange={handleChange}
+                      maxLength={254}
                       className={`${styles.input} ${errors.email ? styles.error : ''}`}
                       placeholder="your.email@example.com"
                   />
@@ -254,6 +275,7 @@ export default function Contact() {
                       name="subject"
                       value={formData.subject}
                       onChange={handleChange}
+                      maxLength={200}
                       className={styles.input}
                       placeholder="What is this regarding?"
                   />
@@ -267,6 +289,7 @@ export default function Contact() {
                       rows={5}
                       value={formData.message}
                       onChange={handleChange}
+                      maxLength={5000}
                       className={`${styles.textarea} ${errors.message ? styles.error : ''}`}
                       placeholder="Your message here..."
                   ></textarea>
@@ -276,9 +299,9 @@ export default function Contact() {
                 <button
                     type="submit"
                     className={styles.submitButton}
-                    disabled={isSubmitting}
+                    disabled={isSubmitting || cooldown > 0}
                 >
-                  {isSubmitting ? 'Sending...' : 'Send Message'}
+                  {isSubmitting ? 'Sending...' : cooldown > 0 ? `Wait ${cooldown}s` : 'Send Message'}
                   {!isSubmitting && (
                       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                         <line x1="22" y1="2" x2="11" y2="13"></line>
