@@ -5,94 +5,69 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## Development Commands
 
 ```bash
-# Development server
-npm run dev
-
-# Production build
-npm run build
-
-# Start production server
-npm start
-
-# Lint code
-npm run lint
+npm run dev      # Development server (http://localhost:3000)
+npm run build    # Production build (ESLint + TypeScript errors will fail the build)
+npm start        # Start production server
+npm run lint     # Lint code
 ```
 
-## Project Architecture
+No test framework is configured.
 
-This is a Next.js 15 portfolio website built with TypeScript and CSS Modules. The project follows a modern React architecture with:
+## Project Overview
 
-### Key Architecture Patterns
+Next.js 16 portfolio website (React 19, TypeScript, CSS Modules). Single-page app with all sections rendered on one page. Deployed to Vercel.
 
-- **Data-Driven Content**: All content is stored in JSON files in `src/data/` for easy customization
-- **Theme System**: Global theme management via React Context with localStorage persistence
-- **CSS Modules**: Component-scoped styling with CSS variables for theming
-- **Scroll Animations**: Custom intersection observer hook for viewport-based animations
-- **Single Page Application**: All sections rendered on a single page with smooth scrolling
+### Key Architecture
 
-### Core Structure
+- **Data-Driven Content**: All content lives in JSON files in `src/data/`. Edit JSON to update content — no code changes needed. Each section component imports its corresponding JSON file directly (e.g., `import skillsJson from '@/data/skills.json'`).
+- **Theme System**: `ThemeContext` (React Context) manages light/dark toggle. Persists to `localStorage`, falls back to system preference. Switches via `data-theme` attribute on `<html>`, which toggles CSS variables defined in `globals.css`.
+- **Scroll Animations**: `useAnimateOnScroll` hook (`src/animations/`) uses Intersection Observer to drive the `AnimatedElement` wrapper component. Supports animation types: `fade-up`, `fade-down`, `fade-left`, `fade-right`, `zoom-in`, `zoom-out` with configurable delay/duration/threshold via CSS custom properties (`--delay`, `--duration`).
+- **Layout**: `RootLayout` (server) → `ThemeProvider` (client) → `MainLayout` (client: Header + main + Footer). All section components are client components (`'use client'`).
 
-```
-src/
-├── app/                    # Next.js App Router
-│   ├── layout.tsx         # Root layout with metadata from JSON
-│   ├── page.tsx           # Home page with all sections
-│   └── globals.css        # Global styles and CSS variables
-├── components/
-│   ├── layout/            # Layout components (Header, Footer, MainLayout)
-│   ├── sections/          # Page sections (Hero, About, Experience, etc.)
-│   └── ThemeToggle.tsx    # Theme switching component
-├── context/
-│   └── ThemeContext.tsx   # Theme state management
-├── data/                  # JSON configuration files
-├── animations/
-│   └── useAnimateOnScroll.ts # Custom animation hook
-```
+### Section Rendering Order
 
-### Data Configuration System
+`src/app/page.tsx` renders all sections in this order: Hero → About → Experience → Skills → Education → Projects → Testimonials → Contact. Each section is a self-contained component in `src/components/sections/{name}/`.
 
-All content is configurable via JSON files in `src/data/`:
+### CSS Variable System
 
-- `metadata.json` - SEO metadata, OpenGraph, Twitter cards
-- `hero.json` - Hero section content and profile image
-- `about.json` - About section, stats, and resume link
-- `experience.json` - Work history with company logos
-- `skills.json` - Technical skills with SVG icons
-- `education.json` - Academic background
-- `projects.json` - Portfolio projects with images
-- `testimonials.json` - Professional recommendations
-- `contact.json` - Contact information and social links
-- `header.json` - Navigation configuration
-- `footer.json` - Footer content and social links
+`globals.css` defines the design token system used across all CSS Modules:
+- Colors: `--primary`, `--secondary`, `--background`, `--foreground`, `--border`
+- Spacing scale: `--space-1` through `--space-24`
+- Typography: `--font-sans` (Inter), `--font-mono` (JetBrains Mono)
+- Transitions: `--transition-fast`, `--transition-normal`, `--transition-slow`
+- Border radius: `--radius-sm` through `--radius-full`
+- Dark mode overrides via `[data-theme="dark"]` selector
 
-### Theme System
+### Component Patterns
 
-The application uses a sophisticated theme system:
+- **Section filtering**: Skills and Projects sections use `activeCategory` state with filter buttons to show/hide items by category.
+- **Testimonials carousel**: Auto-rotates every 8 seconds, pauses on manual dot selection, auto-resumes after 10 seconds of inactivity.
+- **Hero typing animation**: Progressively displays text character-by-character (80ms/char) with blinking cursor.
+- **Contact form**: Real-time validation, 60-second cooldown after successful submission.
 
-- CSS variables defined in `globals.css` for light/dark themes
-- `ThemeContext` provides global theme state with localStorage persistence
-- `data-theme` attribute on document element switches CSS variables
-- System preference detection with fallback to light theme
+### Path Alias
 
-### Animation System
+`@/*` maps to `./src/*` (configured in `tsconfig.json`). Always use `@/` imports.
 
-Custom scroll-based animations using `useAnimateOnScroll` hook:
+### Build Configuration
 
-- Intersection Observer API for viewport detection
-- Configurable threshold and trigger options
-- CSS transitions handle the actual animation effects
+`next.config.ts` enforces strict TypeScript builds (`ignoreBuildErrors: false`). ESLint is run separately via `eslint .` (Next.js 16 removed built-in eslint config from `next.config.ts`). Security headers (CSP, HSTS, X-Frame-Options, etc.) are configured in `next.config.ts` `headers()`.
 
-### Asset Management
+### ESLint Configuration
+
+`eslint.config.mjs` uses native flat config from `eslint-config-next@16` (no `FlatCompat` wrapper). Lint command: `npm run lint` → `eslint .`.
+
+### Asset Locations
 
 - Profile images: `public/images/`
 - Company logos: `public/images/companies/`
-- Skill icons: `public/images/skills/` (SVG format)
+- Skill icons: `public/images/skills/` (SVG)
 - Project images: `public/projects/`
 - Resume PDFs: `public/resume/`
 
 ## EmailJS Integration
 
-Contact form uses EmailJS for client-side email sending. Required environment variables:
+Contact form uses EmailJS for client-side email. Required env vars in `.env.local`:
 
 ```
 NEXT_PUBLIC_EMAILJS_SERVICE_ID
@@ -100,15 +75,21 @@ NEXT_PUBLIC_EMAILJS_TEMPLATE_ID
 NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
 ```
 
-## Development Notes
+Template variables: `{{name}}`, `{{email}}`, `{{subject}}`, `{{message}}`
 
-- Uses Inter font via Google Fonts
-- Vercel Analytics integrated in layout
-- CSS Modules for component styling
-- TypeScript strict mode enabled
-- ESLint with Next.js configuration
-- Responsive design with mobile-first approach
+## PM2 Services
 
-## Content Updates
+| Port | Name | Type |
+|------|------|------|
+| 3000 | portfolio-3000 | Next.js |
 
-To update portfolio content, edit the corresponding JSON files in `src/data/`. The website will automatically reflect changes after rebuild. No code changes required for content updates.
+**Terminal Commands:**
+```bash
+pm2 start ecosystem.config.cjs   # First time
+pm2 start all                    # After first time
+pm2 stop all / pm2 restart all
+pm2 start portfolio-3000 / pm2 stop portfolio-3000
+pm2 logs / pm2 status / pm2 monit
+pm2 save                         # Save process list
+pm2 resurrect                    # Restore saved list
+```
