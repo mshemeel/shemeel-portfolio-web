@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import styles from './Projects.module.css';
 import AnimatedElement from '@/components/layout/AnimatedElement';
+import StaggerGroup from '@/components/layout/StaggerGroup';
 import SectionTitle from '@/components/layout/SectionTitle';
 import projectsJson from '@/data/projects.json';
 
@@ -23,14 +24,14 @@ export default function Projects() {
   return (
     <section id="projects" className={styles.projects}>
       <div className="container">
-        <AnimatedElement animation="fade-up">
+        <AnimatedElement animation="blur-up">
           <SectionTitle
             title="My Projects"
             subtitle="Recent Work"
           />
         </AnimatedElement>
         
-        <AnimatedElement animation="fade-up" delay={0.2}>
+        <AnimatedElement animation="blur-up" delay={0.2}>
           <div className={styles.categories}>
             {categories.map(category => (
               <button
@@ -44,16 +45,11 @@ export default function Projects() {
           </div>
         </AnimatedElement>
         
-        <div className={styles.projectsGrid}>
-          {filteredProjects.map((project, index) => (
-            <AnimatedElement 
-              key={project.id} 
-              animation="fade-up" 
-              delay={0.2 + (index % 4) * 0.1}
-              className={styles.projectCard}
-            >
+        <StaggerGroup className={styles.projectsGrid} key={activeCategory}>
+          {filteredProjects.map((project) => (
+            <div key={project.id} className={styles.projectCard}>
               <div className={styles.projectImage}>
-                <Image 
+                <Image
                   src={project.image}
                   alt={project.title}
                   width={600}
@@ -63,17 +59,17 @@ export default function Projects() {
                 <div className={styles.copyrightText}>{project.copyright}</div>
                 {project.featured && <div className={styles.featuredBadge}>Featured</div>}
               </div>
-              
+
               <div className={styles.projectContent}>
                 <h3 className={styles.projectTitle}>{project.title}</h3>
                 <p className={styles.projectDescription}>{project.description}</p>
-                
+
                 <div className={styles.technologies}>
                   {project.technologies.map((tech, idx) => (
                     <span key={idx} className={styles.techBadge}>{tech}</span>
                   ))}
                 </div>
-                
+
                 <a href={project.link} className={styles.projectLink} target="_blank" rel="noopener noreferrer">
                   View Details
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -82,9 +78,9 @@ export default function Projects() {
                   </svg>
                 </a>
               </div>
-            </AnimatedElement>
+            </div>
           ))}
-        </div>
+        </StaggerGroup>
       </div>
     </section>
   );

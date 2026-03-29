@@ -4,7 +4,14 @@ import React from 'react';
 import styles from './About.module.css';
 import AnimatedElement from '@/components/layout/AnimatedElement';
 import SectionTitle from '@/components/layout/SectionTitle';
+import CountUp from '@/components/animations/CountUp';
 import aboutData from '@/data/about.json';
+
+function parseStatNumber(value: string): { num: number; suffix: string } {
+  const match = value.match(/^(\d+(?:\.\d+)?)(.*)/);
+  if (!match) return { num: 0, suffix: '' };
+  return { num: parseFloat(match[1]), suffix: match[2] };
+}
 
 /**
  * About section component
@@ -15,7 +22,7 @@ export default function About() {
   return (
     <section id="about" className={styles.about}>
       <div className="container">
-        <AnimatedElement animation="fade-up">
+        <AnimatedElement animation="blur-up">
           <SectionTitle
             title="About Me"
             subtitle="My Introduction"
@@ -23,12 +30,14 @@ export default function About() {
         </AnimatedElement>
         
         <div className={styles.content}>
-          <AnimatedElement animation="fade-right" delay={0.2} className={styles.imageColumn}>
+          <AnimatedElement animation="blur-right" delay={0.2} className={styles.imageColumn}>
             <div className={styles.imageWrapper}>
               <div className={styles.patternBackground}></div>
               <div className={styles.profileImageContainer}></div>
               <div className={styles.experienceBadge}>
-                <span className={styles.years}>{stats[0].number}</span>
+                <span className={styles.years}>
+                  <CountUp target={parseStatNumber(stats[0].number).num} suffix={parseStatNumber(stats[0].number).suffix} />
+                </span>
                 <span className={styles.text}>{stats[0].label.split(/<br\s*\/?>/i).map((part, i, arr) => (
                   <React.Fragment key={i}>{part}{i < arr.length - 1 && <br />}</React.Fragment>
                 ))}</span>
@@ -36,7 +45,7 @@ export default function About() {
             </div>
           </AnimatedElement>
           
-          <AnimatedElement animation="fade-left" delay={0.3} className={styles.textColumn}>
+          <AnimatedElement animation="blur-left" delay={0.3} className={styles.textColumn}>
             <div className={styles.aboutText}>
               {bio.map((paragraph, index) => (
                 <p key={index} className={styles.bio}>
@@ -48,7 +57,9 @@ export default function About() {
             <div className={styles.stats}>
               {stats.map((stat, index) => (
                 <div key={index} className={styles.statItem}>
-                  <h3 className={styles.statNumber}>{stat.number}</h3>
+                  <h3 className={styles.statNumber}>
+                    <CountUp target={parseStatNumber(stat.number).num} suffix={parseStatNumber(stat.number).suffix} />
+                  </h3>
                   <p className={styles.statLabel}>{stat.label.split(/<br\s*\/?>/i).map((part, i, arr) => (
                     <React.Fragment key={i}>{part}{i < arr.length - 1 && <br />}</React.Fragment>
                   ))}</p>
@@ -56,7 +67,7 @@ export default function About() {
               ))}
             </div>
             
-            <AnimatedElement animation="fade-up" delay={0.5}>
+            <AnimatedElement animation="blur-up" delay={0.5}>
               <a href={resumeLink} download className={styles.downloadButton}>
                 Download CV
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">

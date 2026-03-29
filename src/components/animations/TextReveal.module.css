@@ -1,0 +1,27 @@
+.container {
+  display: inline;
+}
+
+.word {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(12px);
+  filter: blur(8px);
+  will-change: transform, opacity, filter;
+  transition-property: transform, opacity, filter;
+  transition-duration: 0.5s;
+  transition-timing-function: var(--animation-easing, cubic-bezier(0.22, 1, 0.36, 1));
+  transition-delay: calc(var(--word-index, 0) * var(--word-stagger, 0.05s));
+}
+
+.visible .word {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+}
+
+/* Preserve spaces between words */
+.space {
+  display: inline;
+  width: 0.3em;
+}

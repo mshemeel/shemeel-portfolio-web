@@ -3,6 +3,8 @@
 import React from 'react';
 import Header from './Header';
 import Footer from './Footer';
+import Preloader from './Preloader';
+import SmoothScrollProvider from './SmoothScrollProvider';
 import styles from './MainLayout.module.css';
 
 interface MainLayoutProps {
@@ -14,12 +16,15 @@ interface MainLayoutProps {
  */
 export default function MainLayout({ children }: MainLayoutProps) {
   return (
-    <div className={styles.layout}>
-      <Header />
-      <main className={styles.main}>
-        {children}
-      </main>
-      <Footer />
-    </div>
+    <SmoothScrollProvider>
+      <Preloader />
+      <div className={styles.layout}>
+        <Header />
+        <main className={styles.main}>
+          {children}
+        </main>
+        <Footer />
+      </div>
+    </SmoothScrollProvider>
   );
 } 

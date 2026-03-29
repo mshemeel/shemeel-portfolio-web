@@ -178,7 +178,7 @@ export default function Contact() {
   return (
       <section id="contact" className={styles.contact}>
         <div className="container">
-          <AnimatedElement animation="fade-up">
+          <AnimatedElement animation="blur-up">
             <SectionTitle
                 title="Get In Touch"
                 subtitle="Contact Me"
@@ -186,7 +186,7 @@ export default function Contact() {
           </AnimatedElement>
 
           <div className={styles.contactContent}>
-            <AnimatedElement animation="fade-right" delay={0.2} className={styles.contactInfo}>
+            <AnimatedElement animation="blur-right" delay={0.2} className={styles.contactInfo}>
               <h3 className={styles.infoTitle}>Let&apos;s Talk</h3>
               <p className={styles.infoText}>
                 {description}
@@ -235,7 +235,7 @@ export default function Contact() {
               </div>
             </AnimatedElement>
 
-            <AnimatedElement animation="fade-left" delay={0.3} className={styles.contactForm}>
+            <AnimatedElement animation="blur-left" delay={0.3} className={styles.contactForm}>
               <form ref={formRef} onSubmit={handleSubmit}>
                 <div className={styles.formGroup}>
                   <label htmlFor="name" className={styles.label}>Name</label>

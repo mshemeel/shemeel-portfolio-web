@@ -39,7 +39,7 @@ export default function Testimonials() {
   return (
     <section id="testimonials" className={styles.testimonials}>
       <div className="container">
-        <AnimatedElement animation="fade-up">
+        <AnimatedElement animation="blur-up">
           <SectionTitle
             title="Testimonials"
             subtitle="What People Say"

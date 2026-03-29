@@ -1,5 +1,8 @@
+'use client';
+
 import React from 'react';
 import styles from './SectionTitle.module.css';
+import TextReveal from '@/components/animations/TextReveal';
 
 interface SectionTitleProps {
   title: string;
@@ -10,17 +13,23 @@ interface SectionTitleProps {
 /**
  * SectionTitle - A consistent heading component for section headers
  */
-export default function SectionTitle({ 
-  title, 
-  subtitle, 
-  align = 'center' 
+export default function SectionTitle({
+  title,
+  subtitle,
+  align = 'center'
 }: SectionTitleProps) {
   return (
     <div className={`${styles.sectionTitle} ${styles[align]}`}>
       {subtitle && (
-        <span className={styles.subtitle}>{subtitle}</span>
+        <TextReveal as="span" className={styles.subtitle} stagger={0.03}>
+          {subtitle}
+        </TextReveal>
       )}
-      <h2 className={styles.title}>{title}</h2>
+      <h2 className={styles.title}>
+        <TextReveal stagger={0.04} delay={0.1}>
+          {title}
+        </TextReveal>
+      </h2>
       <div className={styles.underline}>
         <span className={styles.line}></span>
         <span className={styles.dot}></span>
@@ -28,4 +37,4 @@ export default function SectionTitle({
       </div>
     </div>
   );
-} 
+}

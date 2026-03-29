@@ -1,0 +1,16 @@
+.group > * {
+  opacity: 0;
+  transform: translateY(var(--animation-travel, 60px));
+  filter: blur(var(--animation-blur, 10px));
+  will-change: transform, opacity, filter;
+  transition-property: transform, opacity, filter;
+  transition-duration: 0.6s;
+  transition-timing-function: var(--animation-easing, cubic-bezier(0.22, 1, 0.36, 1));
+  transition-delay: calc(var(--stagger-index, 0) * var(--stagger-delay, 0.06s));
+}
+
+.visible > * {
+  opacity: 1;
+  transform: none;
+  filter: blur(0);
+}

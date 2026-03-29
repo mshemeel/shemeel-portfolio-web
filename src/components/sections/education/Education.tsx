@@ -3,6 +3,7 @@
 import React from 'react';
 import styles from './Education.module.css';
 import AnimatedElement from '@/components/layout/AnimatedElement';
+import StaggerGroup from '@/components/layout/StaggerGroup';
 import SectionTitle from '@/components/layout/SectionTitle';
 import educationJson from '@/data/education.json';
 
@@ -16,7 +17,7 @@ export default function Education() {
   return (
     <section id="education" className={styles.education}>
       <div className="container">
-        <AnimatedElement animation="fade-up">
+        <AnimatedElement animation="blur-up">
           <SectionTitle
             title="Education & Certifications"
             subtitle="Academic Background"
@@ -27,14 +28,9 @@ export default function Education() {
           <div className={styles.educationContainer}>
             <h3 className={styles.sectionSubheading}>Education</h3>
             
-            <div className={styles.timelineContainer}>
-              {educationData.map((edu, index) => (
-                <AnimatedElement 
-                  key={edu.id}
-                  animation="fade-up"
-                  delay={0.2 + (index * 0.1)}
-                  className={styles.educationCard}
-                >
+            <StaggerGroup className={styles.timelineContainer}>
+              {educationData.map((edu) => (
+                <div key={edu.id} className={styles.educationCard}>
                   <div className={styles.logoContainer}>
                     <span className={styles.logo}>{edu.logo}</span>
                   </div>
@@ -44,29 +40,24 @@ export default function Education() {
                     <p className={styles.period}>{edu.period}</p>
                     {edu.location && <p className={styles.location}>{edu.location}</p>}
                   </div>
-                </AnimatedElement>
+                </div>
               ))}
-            </div>
+            </StaggerGroup>
           </div>
           
           <div className={styles.certificationsContainer}>
             <h3 className={styles.sectionSubheading}>Awards & Achievements</h3>
             
-            <div className={styles.certificationsGrid}>
-              {certificationsData.map((cert, index) => (
-                <AnimatedElement 
-                  key={cert.id} 
-                  animation="fade-up"
-                  delay={0.4 + (index * 0.1)}
-                  className={styles.certificationCard}
-                >
+            <StaggerGroup className={styles.certificationsGrid}>
+              {certificationsData.map((cert) => (
+                <div key={cert.id} className={styles.certificationCard}>
                   <div className={styles.certIcon}>🏆</div>
                   <h4 className={styles.certName}>{cert.name}</h4>
                   <p className={styles.certIssuer}>{cert.issuer}</p>
                   <p className={styles.certDate}>{cert.date}</p>
-                </AnimatedElement>
+                </div>
               ))}
-            </div>
+            </StaggerGroup>
           </div>
         </div>
       </div>

@@ -1,9 +1,10 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
 import styles from './Header.module.css';
 import ThemeToggle from '@/components/ThemeToggle';
+import { useSmoothScroll } from '@/components/layout/SmoothScrollProvider';
 import headerData from '@/data/header.json';
 
 /**
@@ -12,6 +13,7 @@ import headerData from '@/data/header.json';
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrollPosition, setScrollPosition] = useState(0);
+  const { lenis } = useSmoothScroll();
 
   // Track scroll position for header styling
   useEffect(() => {
@@ -33,6 +35,23 @@ export default function Header() {
     setIsMenuOpen(false);
     document.body.style.overflow = '';
   };
+
+  const handleNavClick = useCallback((e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (href.startsWith('#')) {
+      e.preventDefault();
+      closeMenu();
+      if (lenis) {
+        lenis.scrollTo(href, { offset: -80 });
+      } else {
+        const target = document.querySelector(href);
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    } else {
+      closeMenu();
+    }
+  }, [lenis]);
 
   return (
     <header className={`${styles.header} ${scrollPosition > 50 ? styles.scrolled : ''}`}>
@@ -60,7 +79,7 @@ export default function Header() {
           <ul className={styles.navList}>
             {headerData.navItems.map((item) => (
               <li key={item.id} className={styles.navItem}>
-                <Link href={item.href} className={styles.navLink} onClick={closeMenu}>
+                <Link href={item.href} className={styles.navLink} onClick={(e) => handleNavClick(e, item.href)}>
                   {item.label}
                 </Link>
               </li>

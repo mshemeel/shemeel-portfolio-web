@@ -17,7 +17,7 @@ export default function Experience() {
   return (
     <section id="experience" className={styles.experience}>
       <div className="container">
-        <AnimatedElement animation="fade-up">
+        <AnimatedElement animation="blur-up">
           <SectionTitle
             title="Work Experience"
             subtitle="My Professional Journey"
@@ -28,7 +28,7 @@ export default function Experience() {
           {experienceData.map((job, index) => (
             <AnimatedElement 
               key={job.id}
-              animation={index % 2 === 0 ? "fade-right" : "fade-left"}
+              animation={index % 2 === 0 ? "blur-right" : "blur-left"}
               delay={0.2 + (index * 0.1)}
               className={`${styles.timelineItem} ${index % 2 === 0 ? styles.left : styles.right}`}
             >

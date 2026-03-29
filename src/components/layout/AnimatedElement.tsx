@@ -4,7 +4,7 @@ import React, { ElementType } from 'react';
 import { useAnimateOnScroll } from '@/animations/useAnimateOnScroll';
 import styles from './AnimatedElement.module.css';
 
-type AnimationType = 'fade-up' | 'fade-down' | 'fade-left' | 'fade-right' | 'zoom-in' | 'zoom-out';
+type AnimationType = 'fade-up' | 'fade-down' | 'fade-left' | 'fade-right' | 'blur-up' | 'blur-down' | 'blur-left' | 'blur-right' | 'zoom-in' | 'zoom-out';
 
 type AnimatedElementProps = {
   children: React.ReactNode;

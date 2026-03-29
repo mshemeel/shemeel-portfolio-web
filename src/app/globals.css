@@ -26,6 +26,9 @@
   --transition-fast: 0.15s ease;
   --transition-normal: 0.3s ease;
   --transition-slow: 0.5s ease;
+  --animation-travel: 60px;
+  --animation-easing: cubic-bezier(0.22, 1, 0.36, 1);
+  --animation-blur: 10px;
 
   /* Spacing */
   --space-1: 0.25rem;
@@ -80,7 +83,6 @@
 
 html {
   font-size: 16px;
-  scroll-behavior: smooth;
 }
 
 body {
@@ -189,5 +191,16 @@ section {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border-width: 0;
+}
+
+/* Accessibility: respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
